@@ -1,7 +1,9 @@
 #include "KnowledgeTestDialogRunner.h"
+#include "TestDialogFactoryImpl.h"
 #include <iostream>
 
 using namespace com::prog::knowledgetest;
+namespace com::prog::testthebest {
 class TestTheBestApp {
   public:
     TestTheBestApp(){};
@@ -45,24 +47,23 @@ class TestTheBestApp {
     }
 
     auto run() -> void {
-        // auto testDialogFactory = std::make_shared<LatinTestDialogFactoryImpl>(phraseTestItemListFactory, verbTestItemListFactory);
-        // auto testDialog = testDialogFactory->createTestDialog(
-        //     {.latinDB = latinDB, .numOfPhrases = numOfPhraseQuestions, .numOfVerbs = numOfVerbQuestions, .language = dialogLanguage});
+        auto testDialogFactory = std::make_shared<TestDialogFactoryImpl>();
+        auto testDialog = testDialogFactory->createTestDialog();
 
-        // Language language = dialogLanguage;
-        // KnowledgeTestDialogRunner testDialogRunner(
-        //     {.repeatUntilCorrectAnswer = false,
-        //      .removeOnlyCorrectlyAnsweredItems = true,
-        //      .showQuestion = showQuestion,
-        //      .getAnswer = getAnswer,
-        //      .reactionToResult = [](bool result, std::string rightAnswer) { reactionToResult(result, rightAnswer); },
-        //      .useStatistics = useStatistics});
-        // testDialogRunner.runKnowledgeTestDialog(testDialog);
+        KnowledgeTestDialogRunner testDialogRunner({.repeatUntilCorrectAnswer = false,
+                                                    .removeOnlyCorrectlyAnsweredItems = true,
+                                                    .showQuestion = showQuestion,
+                                                    .getAnswer = getAnswer,
+                                                    .reactionToResult = [](bool result, std::string rightAnswer) { reactionToResult(result, rightAnswer); },
+                                                    .useStatistics = useStatistics});
+        testDialogRunner.runKnowledgeTestDialog(testDialog);
     }
 
   private:
 };
+} // namespace com::prog::testthebest
 
+using namespace com::prog::testthebest;
 auto main(int /*argc*/, char * /*argv*/[]) -> int {
     TestTheBestApp().run();
     return 0;
