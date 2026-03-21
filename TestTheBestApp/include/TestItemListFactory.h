@@ -11,6 +11,7 @@ class TestItemListFactory{
 public:    
     struct Configuration{
         uint8_t numOfAddition;
+        uint8_t numOfMcAddition;
     };
 
      virtual auto createTestItemList(Configuration config) -> std::vector<std::shared_ptr<KnowledgeTestItem>> =0;

@@ -7,7 +7,7 @@ using namespace com::prog::knowledgetest;
 namespace com::prog::testthebest {
 class TestItem : public KnowledgeTestItem {
 public:    
-    virtual auto operator==(const TestItem& other) -> bool = 0;
-    virtual auto getRightAnswer() -> std::string = 0;
+    virtual auto operator==(const TestItem& other) const -> bool = 0;
+    virtual auto getRightAnswer() const -> std::string = 0;
 };
 }

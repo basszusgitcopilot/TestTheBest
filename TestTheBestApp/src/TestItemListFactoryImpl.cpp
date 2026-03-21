@@ -26,6 +26,26 @@ auto TestItemListFactoryImpl::createTestItemList(TestItemListFactory::Configurat
         }
         listAll.insert(std::end(listAll), std::begin(list), std::end(list));
     }
+    {
+        std::vector<std::shared_ptr<TestItem>> list;
+        for (int8_t i = 0; i < config.numOfMcAddition; ++i) {
+            bool found;
+            do {
+                auto item = testItemFactory->createTestItem(TestItemFactory::Type::MC_ADDITION);
+                found = false;
+                for (const auto &it : list) {
+                    if (*it == *item) {
+                        found;
+                    }
+                }
+                if (!found) {
+                    list.push_back(item);
+                    break;
+                }
+            } while (true);
+        }
+        listAll.insert(std::end(listAll), std::begin(list), std::end(list));
+    }
     return listAll;
 }
 } // namespace com::prog::testthebest

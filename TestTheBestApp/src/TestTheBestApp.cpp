@@ -38,15 +38,23 @@ class TestTheBestApp {
     static auto useStatistics(KnowledgeTestDialogRunner::KnowledgeTestDialogStatus testDialogStatus,
                               KnowledgeTestDialogRunner::KnowledgeTestDialogRunnerStatistic statistics) -> void {
         if (testDialogStatus == KnowledgeTestDialogRunner::KnowledgeTestDialogStatus::START_TURN) {
-            std::cout << "Number of remaining questions: " << statistics.numOfRemainingTestItems << std::endl;
+            std::cout << "Anzahl verbleibende Fragen: " << statistics.numOfRemainingTestItems << std::endl;
         } else if (testDialogStatus == KnowledgeTestDialogRunner::KnowledgeTestDialogStatus::ENDED) {
-            std::cout << "Number of questions: " << statistics.numOfTestItems << std::endl;
-            std::cout << "Number of correct answers: " << statistics.numOfCorrectAnswers << std::endl;
-            std::cout << "Number of tries: " << statistics.numOfTries << std::endl;
+            std::cout << "Anzahl der Fragen: " << statistics.numOfTestItems << std::endl;
+            std::cout << "Anzahl korrekter Antworten: " << statistics.numOfCorrectAnswers << std::endl;
+            std::cout << "Anzahl Versuche: " << statistics.numOfTries << std::endl;
         }
     }
 
     auto run() -> void {
+        std::string header = "████████╗███████╗███████╗████████╗    ████████╗██╗  ██╗███████╗    ██████╗ ███████╗███████╗████████╗\n"
+                             "╚══██╔══╝██╔════╝██╔════╝╚══██╔══╝    ╚══██╔══╝██║  ██║██╔════╝    ██╔══██╗██╔════╝██╔════╝╚══██╔══╝\n"
+                             "   ██║   █████╗  ███████╗   ██║          ██║   ███████║█████╗      ██████╔╝█████╗  ███████╗   ██║   \n"
+                             "   ██║   ██╔══╝  ╚════██║   ██║          ██║   ██╔══██║██╔══╝      ██╔══██╗██╔══╝  ╚════██║   ██║   \n"
+                             "   ██║   ███████╗███████║   ██║          ██║   ██║  ██║███████╗    ██████╔╝███████╗███████║   ██║   \n"
+                             "   ╚═╝   ╚══════╝╚══════╝   ╚═╝          ╚═╝   ╚═╝  ╚═╝╚══════╝    ╚═════╝ ╚══════╝╚══════╝   ╚═╝   \n";
+        std::cout << header << std::endl << std::endl;
+
         auto testDialogFactory = std::make_shared<TestDialogFactoryImpl>();
         auto testDialog = testDialogFactory->createTestDialog();
 

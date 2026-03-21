@@ -10,14 +10,14 @@ TestItemAddition::TestItemAddition() {
     b = createRandomNumber(min, max);
 }
 
-auto TestItemAddition::operator==(const TestItem &other) -> bool {
-    const TestItemAddition otherAddition = dynamic_cast<const TestItemAddition &>(other);
+auto TestItemAddition::operator==(const TestItem &other) const -> bool {
+    const TestItemAddition &otherAddition = dynamic_cast<const TestItemAddition &>(other);
     return a == otherAddition.a && b == otherAddition.b;
 };
 
 auto TestItemAddition::getQuestion() -> std::string { return "Was ergibt " + std::to_string(a) + " + " + std::to_string(b) + "?"; }
 
-auto TestItemAddition::getRightAnswer() -> std::string { return std::to_string(a + b); }
+auto TestItemAddition::getRightAnswer() const -> std::string { return std::to_string(a + b); }
 
 auto TestItemAddition::checkAnswer(const std::string &answer) -> CheckAnswerResult {
     auto rightAnswer = getRightAnswer();
