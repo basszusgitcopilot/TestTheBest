@@ -13,5 +13,6 @@ class TestItemListFactoryImpl : public TestItemListFactory {
 
   private:
     std::shared_ptr<TestItemFactory> testItemFactory;
+    auto getNumOfItems(const TestItemListFactory::Configuration &config, TestItemFactory::Type type) -> uint8_t;
 };
 } // namespace com::prog::testthebest
