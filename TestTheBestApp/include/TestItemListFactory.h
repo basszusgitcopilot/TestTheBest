@@ -12,6 +12,7 @@ class TestItemListFactory {
     struct Configuration {
         uint8_t numOfAddition;
         uint8_t numOfMcAddition;
+        uint8_t numOfMcStereoSphereVolume;
     };
 
     virtual auto createTestItemList(Configuration config) -> std::vector<std::shared_ptr<KnowledgeTestItem>> = 0;

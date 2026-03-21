@@ -12,6 +12,9 @@ auto TestItemListFactoryImpl::getNumOfItems(const TestItemListFactory::Configura
     case TestItemFactory::Type::MC_ADDITION: {
         return config.numOfMcAddition;
     }
+    case TestItemFactory::Type::MC_STEREO_SPHERE_VOLUME: {
+        return config.numOfMcStereoSphereVolume;
+    }
     default: {
         return 0;
     }
