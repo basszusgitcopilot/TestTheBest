@@ -9,9 +9,7 @@ namespace com::prog::testthebest {
 class TestItemAddition : public TestItem {
   public:
     TestItemAddition();
-    bool operator==(const TestItemAddition& other){
-      return a == other.a && b == other.b;
-    }
+    auto operator==(const TestItem& other) -> bool override;
     auto getQuestion() -> std::string override;
     auto checkAnswer(const std::string &answer) -> CheckAnswerResult override;
 

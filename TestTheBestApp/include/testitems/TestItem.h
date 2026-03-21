@@ -6,6 +6,6 @@ using namespace com::prog::knowledgetest;
 namespace com::prog::testthebest {
 class TestItem : public KnowledgeTestItem {
 public:    
-    bool operator==(const TestItem& other){return true;}
+    virtual bool operator==(const TestItem& other) = 0;
 };
 }

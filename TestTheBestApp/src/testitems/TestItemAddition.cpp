@@ -14,6 +14,11 @@ TestItemAddition::TestItemAddition() {
     b = uniformDistRight(randomEngine);
 }
 
+auto TestItemAddition::operator==(const TestItem &other) -> bool {
+    const TestItemAddition otherAddition = dynamic_cast<const TestItemAddition &>(other);
+    return a == otherAddition.a && b == otherAddition.b;
+};
+
 auto TestItemAddition::getQuestion() -> std::string { return "Was ergibt " + std::to_string(a) + " + " + std::to_string(b) + "?"; }
 
 auto TestItemAddition::checkAnswer(const std::string &answer) -> CheckAnswerResult {
