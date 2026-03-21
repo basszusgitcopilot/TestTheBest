@@ -3,6 +3,7 @@
 #include "MultipleChoiceTestItem.h"
 #include "TestItemAddition.h"
 #include "TestItemFactory.h"
+#include "TestItemStereoSphereSurfaceVolume.h"
 #include "TestItemStereoSphereVolume.h"
 
 namespace com::prog::testthebest {
@@ -13,6 +14,9 @@ auto TestItemFactoryImpl::createTestItem(const Type type) -> std::shared_ptr<Tes
     }
     case Type::MC_ADDITION: {
         return std::make_shared<MultipleChoiceTestItem<TestItemAddition>>();
+    }
+    case Type::MC_STEREO_SPHERE_SURFACEAREA_VOLUME: {
+        return std::make_shared<MultipleChoiceTestItem<TestItemStereoSphereSurfaceVolume>>();
     }
     case Type::MC_STEREO_SPHERE_VOLUME: {
         return std::make_shared<MultipleChoiceTestItem<TestItemStereoSphereVolume>>();

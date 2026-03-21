@@ -7,9 +7,10 @@ TestDialogFactoryImpl::TestDialogFactoryImpl() : m_testItemListFactory{std::make
 auto TestDialogFactoryImpl::createTestDialog() -> std::shared_ptr<KnowledgeTestDialog> {
     auto testDialog = std::make_shared<KnowledgeTestDialogImpl>();
     auto listItems = m_testItemListFactory->createTestItemList({
-        .numOfAddition = 0,            //
-        .numOfMcAddition = 0,          //
-        .numOfMcStereoSphereVolume = 1 //
+        .numOfAddition = 0,                        //
+        .numOfMcAddition = 0,                      //
+        .numOfMcStereoSphereSurfaceAreaVolume = 1, //
+        .numOfMcStereoSphereVolume = 1,            //
     });
     testDialog->addTestItems(listItems);
     return testDialog;

@@ -21,7 +21,7 @@ auto TestItemStereoSphereVolume::getQuestion() -> std::string {
 auto TestItemStereoSphereVolume::getRightAnswer() const -> std::string {
     double radius = 0.5 * std::sqrt(surfaceArea / M_PI);
     double volume = 4.0 / 3.0 * M_PI * std::pow(radius, 3);
-    return numberToString(volume, 2);
+    return numberToString(volume, 2) + " m³";
 }
 
 auto TestItemStereoSphereVolume::checkAnswer(const std::string &answer) -> CheckAnswerResult {

@@ -6,6 +6,7 @@ src/TestItemFactoryImpl.cpp
 src/TestItemListFactoryImpl.cpp
 src/TestTheBestApp.cpp
 src/testitems/TestItemAddition.cpp
+src/testitems/stereometry/TestItemStereoSphereSurfaceVolume.cpp
 src/testitems/stereometry/TestItemStereoSphereVolume.cpp
 )
 
