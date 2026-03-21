@@ -11,6 +11,7 @@ class TestItemAddition : public TestItem {
     TestItemAddition();
     auto operator==(const TestItem& other) -> bool override;
     auto getQuestion() -> std::string override;
+    auto getRightAnswer() -> std::string override;
     auto checkAnswer(const std::string &answer) -> CheckAnswerResult override;
 
   private:
