@@ -12,6 +12,7 @@ target_include_directories(${PROJECT_NAME}
 PRIVATE
 include
 include/testitems
+include/utils
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE knowledgeTest)
