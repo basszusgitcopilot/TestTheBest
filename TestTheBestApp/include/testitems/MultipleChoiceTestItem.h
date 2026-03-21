@@ -10,10 +10,15 @@ template <class T> class MultipleChoiceTestItem : public TestItem {
     MultipleChoiceTestItem() {
         while (testItemList.size() < numOfChoices) {
             auto item = std::make_shared<T>();
+            bool found = false;
             for (auto const &it : testItemList) {
                 if (*it == *item) {
-                    continue;
+                    found = true;
+                    break;
                 }
+            }
+            if (found) {
+                continue;
             }
             testItemList.emplace_back(item);
         }

@@ -11,8 +11,8 @@ TestItemAddition::TestItemAddition() {
 }
 
 auto TestItemAddition::operator==(const TestItem &other) const -> bool {
-    const TestItemAddition &otherAddition = dynamic_cast<const TestItemAddition &>(other);
-    return a == otherAddition.a && b == otherAddition.b;
+    const TestItemAddition &otherItem = dynamic_cast<const TestItemAddition &>(other);
+    return getRightAnswer() == otherItem.getRightAnswer();
 };
 
 auto TestItemAddition::getQuestion() -> std::string { return "Was ergibt " + std::to_string(a) + " + " + std::to_string(b) + "?"; }

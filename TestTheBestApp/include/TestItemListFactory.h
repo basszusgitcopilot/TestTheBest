@@ -12,6 +12,7 @@ class TestItemListFactory {
     struct Configuration {
         uint8_t numOfAddition;
         uint8_t numOfMcAddition;
+        uint8_t numOfMcAlgebraQuadraticEquation;
         uint8_t numOfMcStereoSphereSurfaceAreaVolume;
         uint8_t numOfMcStereoSphereVolume;
     };

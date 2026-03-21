@@ -11,7 +11,7 @@ TestItemStereoSphereVolume::TestItemStereoSphereVolume() {
 
 auto TestItemStereoSphereVolume::operator==(const TestItem &other) const -> bool {
     const TestItemStereoSphereVolume &otherItem = dynamic_cast<const TestItemStereoSphereVolume &>(other);
-    return surfaceArea == otherItem.surfaceArea;
+    return getRightAnswer() == otherItem.getRightAnswer();
 };
 
 auto TestItemStereoSphereVolume::getQuestion() -> std::string {
