@@ -4,11 +4,12 @@
 #include "TestItemListFactory.h"
 
 namespace com::prog::testthebest {
-class TestDialogFactoryImpl: public TestDialogFactory {
-public:    
+class TestDialogFactoryImpl : public TestDialogFactory {
+  public:
     TestDialogFactoryImpl();
     auto createTestDialog() -> std::shared_ptr<KnowledgeTestDialog> override;
-private:
-    std::shared_ptr<TestItemListFactory> m_testItemListFactory;    
+
+  private:
+    std::shared_ptr<TestItemListFactory> m_testItemListFactory;
 };
-} // namespace com::prog::latin::tester
+} // namespace com::prog::testthebest

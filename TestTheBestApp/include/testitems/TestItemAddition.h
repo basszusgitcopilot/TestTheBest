@@ -9,7 +9,7 @@ namespace com::prog::testthebest {
 class TestItemAddition : public TestItem {
   public:
     TestItemAddition();
-    auto operator==(const TestItem& other) const -> bool override;
+    auto operator==(const TestItem &other) const -> bool override;
     auto getQuestion() -> std::string override;
     auto getRightAnswer() const -> std::string override;
     auto checkAnswer(const std::string &answer) -> CheckAnswerResult override;
@@ -18,4 +18,4 @@ class TestItemAddition : public TestItem {
     int32_t a;
     int32_t b;
 };
-} // namespace com::prog::latin::tester
+} // namespace com::prog::testthebest

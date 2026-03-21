@@ -1,1 +1,1 @@
-find . -path ./_build -prune -name *.h -o -name *.cpp | xargs clang-format -i
+find . -path ./_build -prune -o -name *.h -o -name *.cpp | xargs clang-format -i
