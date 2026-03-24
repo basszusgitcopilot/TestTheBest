@@ -19,3 +19,6 @@ template <class T> auto numberToString(T number, uint8_t precision) -> std::stri
     stream << std::fixed << std::setprecision(precision) << number;
     return stream.str();
 }
+
+auto factorial(uint64_t a) -> uint64_t;
+auto bincoeff(uint64_t n, uint64_t k) -> uint64_t;

@@ -15,6 +15,9 @@ auto TestItemListFactoryImpl::getNumOfItems(const TestItemListFactory::Configura
     case TestItemFactory::Type::MC_ALGEBRA_QUADRATIC_EQUATION: {
         return config.numOfMcAlgebraQuadraticEquation;
     }
+    case TestItemFactory::Type::MC_STOCHASTIC_COMBINATION: {
+        return config.numOfMcStochasticCombination;
+    }
     case TestItemFactory::Type::MC_STEREO_SPHERE_SURFACEAREA_VOLUME: {
         return config.numOfMcStereoSphereSurfaceAreaVolume;
     }

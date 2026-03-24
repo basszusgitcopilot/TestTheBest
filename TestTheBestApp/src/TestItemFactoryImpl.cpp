@@ -6,6 +6,7 @@
 #include "TestItemQuadraticEquation.h"
 #include "TestItemStereoSphereSurfaceVolume.h"
 #include "TestItemStereoSphereVolume.h"
+#include "TestItemStochasticCombination.h"
 
 namespace com::prog::testthebest {
 auto TestItemFactoryImpl::createTestItem(const Type type) -> std::shared_ptr<TestItem> {
@@ -18,6 +19,9 @@ auto TestItemFactoryImpl::createTestItem(const Type type) -> std::shared_ptr<Tes
     }
     case Type::MC_ALGEBRA_QUADRATIC_EQUATION: {
         return std::make_shared<MultipleChoiceTestItem<TestItemQuadraticEquation>>();
+    }
+    case Type::MC_STOCHASTIC_COMBINATION: {
+        return std::make_shared<MultipleChoiceTestItem<TestItemStochasticCombination>>();
     }
     case Type::MC_STEREO_SPHERE_SURFACEAREA_VOLUME: {
         return std::make_shared<MultipleChoiceTestItem<TestItemStereoSphereSurfaceVolume>>();
