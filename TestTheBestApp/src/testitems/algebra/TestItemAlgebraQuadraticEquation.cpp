@@ -1,10 +1,10 @@
-#include "TestItemQuadraticEquation.h"
+#include "TestItemAlgebraQuadraticEquation.h"
 #include "Utils.h"
 #include <iostream>
 
 namespace com::prog::testthebest {
 
-TestItemQuadraticEquation::TestItemQuadraticEquation() {
+TestItemAlgebraQuadraticEquation::TestItemAlgebraQuadraticEquation() {
     constexpr int32_t min = -10;
     constexpr int32_t max = 10;
     a = createRandomNumber(min, max);
@@ -12,17 +12,16 @@ TestItemQuadraticEquation::TestItemQuadraticEquation() {
     c = createRandomNumber(min, max);
 }
 
-auto TestItemQuadraticEquation::operator==(const TestItem &other) const -> bool {
-    const TestItemQuadraticEquation &otherItem = dynamic_cast<const TestItemQuadraticEquation &>(other);
-    std::cout << "TestItemQuadraticEquation: " << getRightAnswer() << " ?= " << otherItem.getRightAnswer() << std::endl;
+auto TestItemAlgebraQuadraticEquation::operator==(const TestItem &other) const -> bool {
+    const TestItemAlgebraQuadraticEquation &otherItem = dynamic_cast<const TestItemAlgebraQuadraticEquation &>(other);
     return getRightAnswer() == otherItem.getRightAnswer();
 };
 
-auto TestItemQuadraticEquation::getQuestion() -> std::string {
+auto TestItemAlgebraQuadraticEquation::getQuestion() -> std::string {
     return "Was sind die Lösungen dieser Gleichung: " + numberToString(a, 0) + "x² + " + numberToString(b, 0) + "x + " + numberToString(c, 0);
 }
 
-auto TestItemQuadraticEquation::getRightAnswer() const -> std::string {
+auto TestItemAlgebraQuadraticEquation::getRightAnswer() const -> std::string {
     double discriminant = std::pow(b, 2) - 4 * a * c;
     if (discriminant < 0) {
         return "keine reelle Lösung";
@@ -35,7 +34,7 @@ auto TestItemQuadraticEquation::getRightAnswer() const -> std::string {
     }
 }
 
-auto TestItemQuadraticEquation::checkAnswer(const std::string &answer) -> CheckAnswerResult {
+auto TestItemAlgebraQuadraticEquation::checkAnswer(const std::string &answer) -> CheckAnswerResult {
     auto rightAnswer = getRightAnswer();
     return {answer == rightAnswer, rightAnswer};
 }

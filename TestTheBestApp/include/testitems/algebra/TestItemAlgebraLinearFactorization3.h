@@ -6,9 +6,9 @@ using namespace com::prog::knowledgetest;
 
 namespace com::prog::testthebest {
 
-class TestItemQuadraticEquation : public TestItem {
+class TestItemAlgebraLinearFactorization3 : public TestItem {
   public:
-    TestItemQuadraticEquation();
+    TestItemAlgebraLinearFactorization3();
     auto operator==(const TestItem &other) const -> bool override;
     auto getQuestion() -> std::string override;
     auto getRightAnswer() const -> std::string override;

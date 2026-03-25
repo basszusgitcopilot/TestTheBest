@@ -15,6 +15,12 @@ auto TestItemListFactoryImpl::getNumOfItems(const TestItemListFactory::Configura
     case TestItemFactory::Type::MC_ALGEBRA_QUADRATIC_EQUATION: {
         return config.numOfMcAlgebraQuadraticEquation;
     }
+    case TestItemFactory::Type::MC_ALGEBRA_LINEAR_FACTORIZATION: {
+        return config.numOfMcAlgebraLinearFactorization;
+    }
+    case TestItemFactory::Type::MC_ALGEBRA_LINEAR_FACTORIZATION3: {
+        return config.numOfMcAlgebraLinearFactorization3;
+    }
     case TestItemFactory::Type::MC_STOCHASTIC_COMBINATION: {
         return config.numOfMcStochasticCombination;
     }

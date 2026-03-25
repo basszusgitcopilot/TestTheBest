@@ -9,8 +9,10 @@ auto TestDialogFactoryImpl::createTestDialog() -> std::shared_ptr<KnowledgeTestD
     auto listItems = m_testItemListFactory->createTestItemList({
         .numOfAddition = 0,                        //
         .numOfMcAddition = 0,                      //
+        .numOfMcAlgebraLinearFactorization = 0,    //
+        .numOfMcAlgebraLinearFactorization3 = 1,   //
         .numOfMcAlgebraQuadraticEquation = 0,      //
-        .numOfMcStochasticCombination = 1,         //
+        .numOfMcStochasticCombination = 0,         //
         .numOfMcStereoSphereSurfaceAreaVolume = 0, //
         .numOfMcStereoSphereVolume = 0,            //
     });

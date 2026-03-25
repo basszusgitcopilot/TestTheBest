@@ -2,8 +2,10 @@
 
 #include "MultipleChoiceTestItem.h"
 #include "TestItemAddition.h"
+#include "TestItemAlgebraLinearFactorization.h"
+#include "TestItemAlgebraLinearFactorization3.h"
+#include "TestItemAlgebraQuadraticEquation.h"
 #include "TestItemFactory.h"
-#include "TestItemQuadraticEquation.h"
 #include "TestItemStereoSphereSurfaceVolume.h"
 #include "TestItemStereoSphereVolume.h"
 #include "TestItemStochasticCombination.h"
@@ -17,8 +19,14 @@ auto TestItemFactoryImpl::createTestItem(const Type type) -> std::shared_ptr<Tes
     case Type::MC_ADDITION: {
         return std::make_shared<MultipleChoiceTestItem<TestItemAddition>>();
     }
+    case Type::MC_ALGEBRA_LINEAR_FACTORIZATION: {
+        return std::make_shared<MultipleChoiceTestItem<TestItemAlgebraLinearFactorization>>();
+    }
+    case Type::MC_ALGEBRA_LINEAR_FACTORIZATION3: {
+        return std::make_shared<MultipleChoiceTestItem<TestItemAlgebraLinearFactorization3>>();
+    }
     case Type::MC_ALGEBRA_QUADRATIC_EQUATION: {
-        return std::make_shared<MultipleChoiceTestItem<TestItemQuadraticEquation>>();
+        return std::make_shared<MultipleChoiceTestItem<TestItemAlgebraQuadraticEquation>>();
     }
     case Type::MC_STOCHASTIC_COMBINATION: {
         return std::make_shared<MultipleChoiceTestItem<TestItemStochasticCombination>>();
