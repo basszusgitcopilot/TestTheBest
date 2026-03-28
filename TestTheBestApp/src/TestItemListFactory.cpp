@@ -78,6 +78,7 @@ auto TestItemListFactory::readConfigurationFromFile(std::string fileName) -> Con
         }
     }
     propertiesFile.close();
+
     return configuration;
 }
 } // namespace com::prog::testthebest

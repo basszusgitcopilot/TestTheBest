@@ -10,14 +10,14 @@ namespace com::prog::testthebest {
 class TestItemListFactory {
   public:
     struct Configuration {
-        uint8_t numOfAddition;
-        uint8_t numOfMcAddition;
-        uint8_t numOfMcAlgebraLinearFactorization;
-        uint8_t numOfMcAlgebraLinearFactorization3;
-        uint8_t numOfMcAlgebraQuadraticEquation;
-        uint8_t numOfMcStochasticCombination;
-        uint8_t numOfMcStereoSphereSurfaceAreaVolume;
-        uint8_t numOfMcStereoSphereVolume;
+        uint8_t numOfAddition = 0;
+        uint8_t numOfMcAddition = 0;
+        uint8_t numOfMcAlgebraLinearFactorization = 0;
+        uint8_t numOfMcAlgebraLinearFactorization3 = 0;
+        uint8_t numOfMcAlgebraQuadraticEquation = 0;
+        uint8_t numOfMcStochasticCombination = 0;
+        uint8_t numOfMcStereoSphereSurfaceAreaVolume = 0;
+        uint8_t numOfMcStereoSphereVolume = 0;
     };
 
     virtual auto createTestItemList(Configuration config) -> std::vector<std::shared_ptr<KnowledgeTestItem>> = 0;
