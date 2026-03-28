@@ -1,11 +1,11 @@
 project(testTheBestApp)
 
 add_executable(${PROJECT_NAME}
-src/TestDialogFactoryImpl.cpp
-src/TestItemFactoryImpl.cpp
-src/TestItemListFactory.cpp
-src/TestItemListFactoryImpl.cpp
 src/TestTheBestApp.cpp
+src/testfactories/TestDialogFactoryImpl.cpp
+src/testfactories/TestItemFactoryImpl.cpp
+src/testfactories/TestItemListFactory.cpp
+src/testfactories/TestItemListFactoryImpl.cpp
 src/testitems/TestItemAddition.cpp
 src/testitems/algebra/TestItemAlgebraLinearFactorization.cpp
 src/testitems/algebra/TestItemAlgebraLinearFactorization3.cpp
@@ -20,6 +20,7 @@ src/utils/TestUtils.cpp
 target_include_directories(${PROJECT_NAME}
 PRIVATE
 include
+include/testfactories
 include/testitems
 include/testitems/algebra
 include/testitems/stereometry
