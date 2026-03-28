@@ -12,8 +12,10 @@ src/testitems/algebra/TestItemAlgebraLinearFactorization3.cpp
 src/testitems/algebra/TestItemAlgebraQuadraticEquation.cpp
 src/testitems/stereometry/TestItemStereoSphereSurfaceVolume.cpp
 src/testitems/stereometry/TestItemStereoSphereVolume.cpp
+src/testitems/stochastic/TestItemStochasticBernoulliExperiment.cpp
 src/testitems/stochastic/TestItemStochasticCombination.cpp
 src/utils/MathUtils.cpp
+src/utils/StringUtils.cpp
 src/utils/TestUtils.cpp
 )
 

@@ -28,16 +28,20 @@ auto TestItemListFactory::fillConfigurationValue(Configuration &configuration, s
         configuration.numOfMcAlgebraQuadraticEquation = propertyValue;
         return;
     }
-    if (propertyName == "numOfMcStochasticCombination") {
-        configuration.numOfMcStochasticCombination = propertyValue;
-        return;
-    }
     if (propertyName == "numOfMcStereoSphereSurfaceAreaVolume") {
         configuration.numOfMcStereoSphereSurfaceAreaVolume = propertyValue;
         return;
     }
     if (propertyName == "numOfMcStereoSphereVolume") {
         configuration.numOfMcStereoSphereVolume = propertyValue;
+        return;
+    }
+    if (propertyName == "numOfMcStochasticBernoulliExperiment") {
+        configuration.numOfMcStochasticBernoulliExperiment = propertyValue;
+        return;
+    }
+    if (propertyName == "numOfMcStochasticCombination") {
+        configuration.numOfMcStochasticCombination = propertyValue;
         return;
     }
     std::cerr << "ERROR: unknown property name: " << propertyName << std::endl;

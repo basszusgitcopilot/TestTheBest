@@ -1,5 +1,6 @@
 #include "TestItemListFactoryImpl.h"
 #include "TestItemFactoryImpl.h"
+#include <iostream>
 
 namespace com::prog::testthebest {
 TestItemListFactoryImpl::TestItemListFactoryImpl() : testItemFactory{std::make_shared<TestItemFactoryImpl>()} {}
@@ -21,14 +22,17 @@ auto TestItemListFactoryImpl::getNumOfItems(const TestItemListFactory::Configura
     case TestItemFactory::Type::MC_ALGEBRA_LINEAR_FACTORIZATION3: {
         return config.numOfMcAlgebraLinearFactorization3;
     }
-    case TestItemFactory::Type::MC_STOCHASTIC_COMBINATION: {
-        return config.numOfMcStochasticCombination;
-    }
     case TestItemFactory::Type::MC_STEREO_SPHERE_SURFACEAREA_VOLUME: {
         return config.numOfMcStereoSphereSurfaceAreaVolume;
     }
     case TestItemFactory::Type::MC_STEREO_SPHERE_VOLUME: {
         return config.numOfMcStereoSphereVolume;
+    }
+    case TestItemFactory::Type::MC_STOCHASTIC_BERNOULLI_EXPERIMENT: {
+        return config.numOfMcStochasticBernoulliExperiment;
+    }
+    case TestItemFactory::Type::MC_STOCHASTIC_COMBINATION: {
+        return config.numOfMcStochasticCombination;
     }
     default: {
         return 0;

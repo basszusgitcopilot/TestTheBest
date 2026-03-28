@@ -15,6 +15,7 @@ class TestItemListFactory {
         uint8_t numOfMcAlgebraLinearFactorization = 0;
         uint8_t numOfMcAlgebraLinearFactorization3 = 0;
         uint8_t numOfMcAlgebraQuadraticEquation = 0;
+        uint8_t numOfMcStochasticBernoulliExperiment = 0;
         uint8_t numOfMcStochasticCombination = 0;
         uint8_t numOfMcStereoSphereSurfaceAreaVolume = 0;
         uint8_t numOfMcStereoSphereVolume = 0;
