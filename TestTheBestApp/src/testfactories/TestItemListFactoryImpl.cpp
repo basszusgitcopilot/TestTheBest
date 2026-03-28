@@ -22,6 +22,9 @@ auto TestItemListFactoryImpl::getNumOfItems(const TestItemListFactory::Configura
     case TestItemFactory::Type::MC_ALGEBRA_LINEAR_FACTORIZATION3: {
         return config.numOfMcAlgebraLinearFactorization3;
     }
+    case TestItemFactory::Type::MC_DIFFERENTIAL_RULES: {
+        return config.numOfMcDifferentialRules;
+    }
     case TestItemFactory::Type::MC_STEREO_SPHERE_SURFACEAREA_VOLUME: {
         return config.numOfMcStereoSphereSurfaceAreaVolume;
     }

@@ -28,6 +28,10 @@ auto TestItemListFactory::fillConfigurationValue(Configuration &configuration, s
         configuration.numOfMcAlgebraQuadraticEquation = propertyValue;
         return;
     }
+    if (propertyName == "numOfMcDifferentialRules") {
+        configuration.numOfMcDifferentialRules = propertyValue;
+        return;
+    }
     if (propertyName == "numOfMcStereoSphereSurfaceAreaVolume") {
         configuration.numOfMcStereoSphereSurfaceAreaVolume = propertyValue;
         return;

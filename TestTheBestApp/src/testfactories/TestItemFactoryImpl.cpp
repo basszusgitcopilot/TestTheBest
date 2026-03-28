@@ -5,6 +5,7 @@
 #include "TestItemAlgebraLinearFactorization.h"
 #include "TestItemAlgebraLinearFactorization3.h"
 #include "TestItemAlgebraQuadraticEquation.h"
+#include "TestItemDifferentialRules.h"
 #include "TestItemFactory.h"
 #include "TestItemStereoSphereSurfaceVolume.h"
 #include "TestItemStereoSphereVolume.h"
@@ -28,6 +29,9 @@ auto TestItemFactoryImpl::createTestItem(const Type type) -> std::shared_ptr<Tes
     }
     case Type::MC_ALGEBRA_QUADRATIC_EQUATION: {
         return std::make_shared<MultipleChoiceTestItem<TestItemAlgebraQuadraticEquation>>();
+    }
+    case Type::MC_DIFFERENTIAL_RULES: {
+        return std::make_shared<MultipleChoiceTestItem<TestItemDifferentialRules>>();
     }
     case Type::MC_STEREO_SPHERE_SURFACEAREA_VOLUME: {
         return std::make_shared<MultipleChoiceTestItem<TestItemStereoSphereSurfaceVolume>>();
