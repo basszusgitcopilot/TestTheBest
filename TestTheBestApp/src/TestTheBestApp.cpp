@@ -1,5 +1,6 @@
 #include "KnowledgeTestDialogRunner.h"
 #include "TestDialogFactoryImpl.h"
+#include "TestUtils.h"
 #include <iostream>
 
 using namespace com::prog::knowledgetest;
@@ -57,6 +58,8 @@ class TestTheBestApp {
 
         auto testDialogFactory = std::make_shared<TestDialogFactoryImpl>();
         auto testDialog = testDialogFactory->createTestDialog();
+        writeQuestionsToFile("TestTheBest_Questions.txt", testDialog);
+        writeAnswersToFile("TestTheBest_Answers.txt", testDialog);
 
         KnowledgeTestDialogRunner testDialogRunner({.repeatUntilCorrectAnswer = false,
                                                     .removeOnlyCorrectlyAnsweredItems = true,

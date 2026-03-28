@@ -1,5 +1,5 @@
 #include "TestItemAddition.h"
-#include "Utils.h"
+#include "MathUtils.h"
 
 namespace com::prog::testthebest {
 
@@ -15,7 +15,7 @@ auto TestItemAddition::operator==(const TestItem &other) const -> bool {
     return getRightAnswer() == otherItem.getRightAnswer();
 };
 
-auto TestItemAddition::getQuestion() -> std::string { return "Was ergibt " + std::to_string(a) + " + " + std::to_string(b) + "?"; }
+auto TestItemAddition::getQuestion() -> std::string { return "Was ergibt " + std::to_string(a) + " + " + std::to_string(b) + "?\n"; }
 
 auto TestItemAddition::getRightAnswer() const -> std::string { return std::to_string(a + b); }
 

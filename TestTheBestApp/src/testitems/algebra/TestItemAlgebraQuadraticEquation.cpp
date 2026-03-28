@@ -1,5 +1,5 @@
 #include "TestItemAlgebraQuadraticEquation.h"
-#include "Utils.h"
+#include "MathUtils.h"
 #include <iostream>
 
 namespace com::prog::testthebest {
@@ -18,7 +18,7 @@ auto TestItemAlgebraQuadraticEquation::operator==(const TestItem &other) const -
 };
 
 auto TestItemAlgebraQuadraticEquation::getQuestion() -> std::string {
-    return "Was sind die Lösungen dieser Gleichung: " + numberToString(a, 0) + "x² + " + numberToString(b, 0) + "x + " + numberToString(c, 0);
+    return "Was sind die Lösungen dieser Gleichung: " + numberToString(a, 0) + "x² + " + numberToString(b, 0) + "x + " + numberToString(c, 0) + " = 0";
 }
 
 auto TestItemAlgebraQuadraticEquation::getRightAnswer() const -> std::string {

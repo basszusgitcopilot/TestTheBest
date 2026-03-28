@@ -1,4 +1,4 @@
-#include "Utils.h"
+#include "MathUtils.h"
 
 auto factorial(uint64_t a) -> uint64_t {
     uint64_t result = 1;

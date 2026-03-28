@@ -1,5 +1,5 @@
 #include "TestItemAlgebraLinearFactorization.h"
-#include "Utils.h"
+#include "MathUtils.h"
 #include <iostream>
 
 namespace com::prog::testthebest {
@@ -17,11 +17,11 @@ auto TestItemAlgebraLinearFactorization::operator==(const TestItem &other) const
 };
 
 auto TestItemAlgebraLinearFactorization::getQuestion() -> std::string {
-    return "Welche Zerlegung entspricht dieser Gleichung: x² + " + numberToString(a + b, 0) + "x + " + numberToString(a * b, 0);
+    return "Welche Zerlegung entspricht dieser Gleichung: x² + " + numberToString(a + b, 0) + "x + " + numberToString(a * b, 0) + " = 0";
 }
 
 auto TestItemAlgebraLinearFactorization::getRightAnswer() const -> std::string {
-    return std::string("(x + ") + numberToString(a, 0) + ")*(x + " + numberToString(b, 0) + ")";
+    return std::string("(x + ") + numberToString(a, 0) + ")*(x + " + numberToString(b, 0) + ") = 0";
 }
 
 auto TestItemAlgebraLinearFactorization::checkAnswer(const std::string &answer) -> CheckAnswerResult {

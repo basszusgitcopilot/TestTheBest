@@ -1,5 +1,5 @@
 #include "TestItemAlgebraLinearFactorization3.h"
-#include "Utils.h"
+#include "MathUtils.h"
 #include <iostream>
 
 namespace com::prog::testthebest {
@@ -20,11 +20,11 @@ auto TestItemAlgebraLinearFactorization3::operator==(const TestItem &other) cons
 auto TestItemAlgebraLinearFactorization3::getQuestion() -> std::string {
     // (x+a)(x+b)(x+c) = (x²+(a+b)x+ab)(x+c) = x³+(a+b)x²+abx+cx²+c(a+b)x+cab = x³+(a+b+c)x²+(ab+ca+cb)x+cab
     return "Welche Zerlegung entspricht dieser Gleichung: x³ + " + numberToString(a + b + c, 0) + "x² + " + numberToString(a * b + b * c + c * a, 0) + "x + " +
-           numberToString(a * b * c, 0);
+           numberToString(a * b * c, 0) + " = 0";
 }
 
 auto TestItemAlgebraLinearFactorization3::getRightAnswer() const -> std::string {
-    return std::string("(x + ") + numberToString(a, 0) + ")*(x + " + numberToString(b, 0) + ")*(x + " + numberToString(c, 0) + ")";
+    return std::string("(x + ") + numberToString(a, 0) + ")*(x + " + numberToString(b, 0) + ")*(x + " + numberToString(c, 0) + ") = 0";
 }
 
 auto TestItemAlgebraLinearFactorization3::checkAnswer(const std::string &answer) -> CheckAnswerResult {
