@@ -57,7 +57,7 @@ class TestTheBestApp {
         std::cout << header << std::endl << std::endl;
 
         auto testDialogFactory = std::make_shared<TestDialogFactoryImpl>();
-        auto testDialog = testDialogFactory->createTestDialog();
+        auto testDialog = testDialogFactory->createTestDialog("TestTheBest.properties");
         writeQuestionsToFile("TestTheBest_Questions.txt", testDialog);
         writeAnswersToFile("TestTheBest_Answers.txt", testDialog);
 

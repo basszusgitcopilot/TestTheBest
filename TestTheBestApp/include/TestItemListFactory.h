@@ -21,5 +21,10 @@ class TestItemListFactory {
     };
 
     virtual auto createTestItemList(Configuration config) -> std::vector<std::shared_ptr<KnowledgeTestItem>> = 0;
+
+    static auto readConfigurationFromFile(std::string fileName) -> Configuration;
+
+  private:
+    static auto fillConfigurationValue(Configuration &configuration, std::string propertyName, uint8_t propertyValue) -> void;
 };
 } // namespace com::prog::testthebest

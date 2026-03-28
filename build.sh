@@ -21,5 +21,6 @@ fi
 # genhtml -q --demangle-cpp -o coverage coverage.info
 
 # cd ..
+cp TestTheBest.properties _build/TestTheBestApp
 echo 10987654321
 

@@ -3,6 +3,7 @@ project(testTheBestApp)
 add_executable(${PROJECT_NAME}
 src/TestDialogFactoryImpl.cpp
 src/TestItemFactoryImpl.cpp
+src/TestItemListFactory.cpp
 src/TestItemListFactoryImpl.cpp
 src/TestTheBestApp.cpp
 src/testitems/TestItemAddition.cpp
