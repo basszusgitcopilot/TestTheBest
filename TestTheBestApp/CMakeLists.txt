@@ -11,6 +11,7 @@ src/testitems/algebra/TestItemAlgebraLinearFactorization.cpp
 src/testitems/algebra/TestItemAlgebraLinearFactorization3.cpp
 src/testitems/algebra/TestItemAlgebraQuadraticEquation.cpp
 src/testitems/differential/TestItemDifferentialRules.cpp
+src/testitems/integral/TestItemIntegralRules.cpp
 src/testitems/stereometry/TestItemStereoSphereSurfaceVolume.cpp
 src/testitems/stereometry/TestItemStereoSphereVolume.cpp
 src/testitems/stochastic/TestItemStochasticBernoulliExperiment.cpp
@@ -27,6 +28,7 @@ include/testfactories
 include/testitems
 include/testitems/algebra
 include/testitems/differential
+include/testitems/integral
 include/testitems/stereometry
 include/testitems/stochastic
 include/utils

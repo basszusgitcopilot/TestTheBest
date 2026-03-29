@@ -7,6 +7,7 @@
 #include "TestItemAlgebraQuadraticEquation.h"
 #include "TestItemDifferentialRules.h"
 #include "TestItemFactory.h"
+#include "TestItemIntegralRules.h"
 #include "TestItemStereoSphereSurfaceVolume.h"
 #include "TestItemStereoSphereVolume.h"
 #include "TestItemStochasticBernoulliExperiment.h"
@@ -32,6 +33,9 @@ auto TestItemFactoryImpl::createTestItem(const Type type) -> std::shared_ptr<Tes
     }
     case Type::MC_DIFFERENTIAL_RULES: {
         return std::make_shared<MultipleChoiceTestItem<TestItemDifferentialRules>>();
+    }
+    case Type::MC_INTEGRAL_RULES: {
+        return std::make_shared<MultipleChoiceTestItem<TestItemIntegralRules>>();
     }
     case Type::MC_STEREO_SPHERE_SURFACEAREA_VOLUME: {
         return std::make_shared<MultipleChoiceTestItem<TestItemStereoSphereSurfaceVolume>>();
