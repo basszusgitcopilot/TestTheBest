@@ -5,6 +5,7 @@
 #include "TestItemAlgebraLinearFactorization.h"
 #include "TestItemAlgebraLinearFactorization3.h"
 #include "TestItemAlgebraQuadraticEquation.h"
+#include "TestItemDefiniteIntegral.h"
 #include "TestItemDifferentialRules.h"
 #include "TestItemFactory.h"
 #include "TestItemIntegralRules.h"
@@ -33,6 +34,9 @@ auto TestItemFactoryImpl::createTestItem(const Type type) -> std::shared_ptr<Tes
     }
     case Type::MC_DIFFERENTIAL_RULES: {
         return std::make_shared<MultipleChoiceTestItem<TestItemDifferentialRules>>();
+    }
+    case Type::MC_INTEGRAL_DEFINITE_INTGRAL: {
+        return std::make_shared<MultipleChoiceTestItem<TestItemDefiniteIntegral>>();
     }
     case Type::MC_INTEGRAL_RULES: {
         return std::make_shared<MultipleChoiceTestItem<TestItemIntegralRules>>();

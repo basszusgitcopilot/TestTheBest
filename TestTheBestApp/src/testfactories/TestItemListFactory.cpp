@@ -28,6 +28,10 @@ auto TestItemListFactory::fillConfigurationValue(Configuration &configuration, s
         configuration.numOfMcAlgebraQuadraticEquation = propertyValue;
         return;
     }
+    if (propertyName == "numOfMcIntegralDefiniteIntegral") {
+        configuration.numOfMcIntegralDefiniteIntegral = propertyValue;
+        return;
+    }
     if (propertyName == "numOfMcIntegralRules") {
         configuration.numOfMcIntegralRules = propertyValue;
         return;

@@ -11,6 +11,7 @@ src/testitems/algebra/TestItemAlgebraLinearFactorization.cpp
 src/testitems/algebra/TestItemAlgebraLinearFactorization3.cpp
 src/testitems/algebra/TestItemAlgebraQuadraticEquation.cpp
 src/testitems/differential/TestItemDifferentialRules.cpp
+src/testitems/integral/TestItemDefiniteIntegral.cpp
 src/testitems/integral/TestItemIntegralRules.cpp
 src/testitems/stereometry/TestItemStereoSphereSurfaceVolume.cpp
 src/testitems/stereometry/TestItemStereoSphereVolume.cpp
