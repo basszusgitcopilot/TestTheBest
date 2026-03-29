@@ -33,12 +33,18 @@ class TestItemStochasticBernoulliExperiment : public TestItem {
         "In einer Urne befinden sich " + placeholderNumOfA + " rote und " + placeholderNumOfB + " schwarze Kugeln. Es werden " + placeholderNumOfTrials +
             " Kugeln mit Zurücklegen entnommen. Was ist die "
             "Wahrscheinlichkeit, dass genau " +
-            placeholderNumOfHits + " rote unter der " + placeholderNumOfTrials + " Kugeln sind.",
+            placeholderNumOfHits + " rote unter den " + placeholderNumOfTrials + " Kugeln sind.",
         "In einem großen Zylinder sind " + placeholderNumOfA + " weiße und " + placeholderNumOfB + " schwarze Kaninchen. Es werden " + placeholderNumOfTrials +
             " Kaninchen mit Zurücklegen entnommen. Was ist die "
             "Wahrscheinlichkeit, dass genau " +
-            placeholderNumOfHits + " weiße unter der " + placeholderNumOfTrials + " Kaninchen sind."
-
-    };
+            placeholderNumOfHits + " weiße unter den " + placeholderNumOfTrials + " Kaninchen sind.",
+        "In einer Tüte sind " + placeholderNumOfA + " rote und " + placeholderNumOfB + " gelbe Gummibärchen. Es werden " + placeholderNumOfTrials +
+            " Gummibärchen mit Zurücklegen entnommen. Was ist die "
+            "Wahrscheinlichkeit, dass genau " +
+            placeholderNumOfHits + " rote unter den " + placeholderNumOfTrials + " Gummibärchen sind.",
+        "In einer Kiste sind " + placeholderNumOfA + " rote und " + placeholderNumOfB + " grüne Äpfel. Es werden " + placeholderNumOfTrials +
+            " Äpfel mit Zurücklegen entnommen. Was ist die "
+            "Wahrscheinlichkeit, dass genau " +
+            placeholderNumOfHits + " rote unter den " + placeholderNumOfTrials + " Äpfeln sind."};
 };
 } // namespace com::prog::testthebest
