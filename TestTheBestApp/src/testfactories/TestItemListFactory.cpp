@@ -60,6 +60,10 @@ auto TestItemListFactory::fillConfigurationValue(Configuration &configuration, s
         configuration.numOfMcVectorDotProduct = propertyValue;
         return;
     }
+    if (propertyName == "numOfMcVectorCrossProduct") {
+        configuration.numOfMcVectorCrossProduct = propertyValue;
+        return;
+    }
     std::cerr << "ERROR: unknown property name: " << propertyName << std::endl;
 }
 

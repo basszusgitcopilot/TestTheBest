@@ -46,6 +46,9 @@ auto TestItemListFactoryImpl::getNumOfItems(const TestItemListFactory::Configura
     case TestItemFactory::Type::MC_VECTOR_DOT_PRODUCT: {
         return config.numOfMcVectorDotProduct;
     }
+    case TestItemFactory::Type::MC_VECTOR_CROSS_PRODUCT: {
+        return config.numOfMcVectorCrossProduct;
+    }
     default: {
         return 0;
     }

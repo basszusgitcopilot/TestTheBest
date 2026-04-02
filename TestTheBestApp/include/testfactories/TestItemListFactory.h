@@ -22,6 +22,7 @@ class TestItemListFactory {
         uint8_t numOfMcStochasticCombination = 0;
         uint8_t numOfMcStereoSphereSurfaceAreaVolume = 0;
         uint8_t numOfMcStereoSphereVolume = 0;
+        uint8_t numOfMcVectorCrossProduct = 0;
         uint8_t numOfMcVectorDotProduct = 0;
     };
 

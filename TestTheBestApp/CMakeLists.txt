@@ -17,6 +17,7 @@ src/testitems/stereometry/TestItemStereoSphereSurfaceVolume.cpp
 src/testitems/stereometry/TestItemStereoSphereVolume.cpp
 src/testitems/stochastic/TestItemStochasticBernoulliExperiment.cpp
 src/testitems/stochastic/TestItemStochasticCombination.cpp
+src/testitems/vectors/TestItemVectorCrossProduct.cpp
 src/testitems/vectors/TestItemVectorDotProduct.cpp
 src/utils/MathUtils.cpp
 src/utils/StringUtils.cpp
