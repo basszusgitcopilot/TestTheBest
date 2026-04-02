@@ -22,6 +22,7 @@ class TestItemListFactory {
         uint8_t numOfMcStochasticCombination = 0;
         uint8_t numOfMcStereoSphereSurfaceAreaVolume = 0;
         uint8_t numOfMcStereoSphereVolume = 0;
+        uint8_t numOfMcVectorDotProduct = 0;
     };
 
     virtual auto createTestItemList(Configuration config) -> std::vector<std::shared_ptr<KnowledgeTestItem>> = 0;

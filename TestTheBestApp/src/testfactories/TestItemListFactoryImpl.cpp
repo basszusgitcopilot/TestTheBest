@@ -43,6 +43,9 @@ auto TestItemListFactoryImpl::getNumOfItems(const TestItemListFactory::Configura
     case TestItemFactory::Type::MC_STOCHASTIC_COMBINATION: {
         return config.numOfMcStochasticCombination;
     }
+    case TestItemFactory::Type::MC_VECTOR_DOT_PRODUCT: {
+        return config.numOfMcVectorDotProduct;
+    }
     default: {
         return 0;
     }

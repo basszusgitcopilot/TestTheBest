@@ -56,6 +56,10 @@ auto TestItemListFactory::fillConfigurationValue(Configuration &configuration, s
         configuration.numOfMcStochasticCombination = propertyValue;
         return;
     }
+    if (propertyName == "numOfMcVectorDotProduct") {
+        configuration.numOfMcVectorDotProduct = propertyValue;
+        return;
+    }
     std::cerr << "ERROR: unknown property name: " << propertyName << std::endl;
 }
 

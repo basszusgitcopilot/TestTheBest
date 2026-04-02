@@ -13,6 +13,7 @@
 #include "TestItemStereoSphereVolume.h"
 #include "TestItemStochasticBernoulliExperiment.h"
 #include "TestItemStochasticCombination.h"
+#include "TestItemVectorDotProduct.h"
 
 namespace com::prog::testthebest {
 auto TestItemFactoryImpl::createTestItem(const Type type) -> std::shared_ptr<TestItem> {
@@ -52,6 +53,9 @@ auto TestItemFactoryImpl::createTestItem(const Type type) -> std::shared_ptr<Tes
     }
     case Type::MC_STOCHASTIC_COMBINATION: {
         return std::make_shared<MultipleChoiceTestItem<TestItemStochasticCombination>>();
+    }
+    case Type::MC_VECTOR_DOT_PRODUCT: {
+        return std::make_shared<MultipleChoiceTestItem<TestItemVectorDotProduct>>();
     }
     default: {
         return nullptr;
