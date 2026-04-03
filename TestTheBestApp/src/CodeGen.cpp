@@ -29,6 +29,163 @@ auto toScreamingSnakeCase(std::string text) -> std::string {
     return result;
 }
 
+auto generateProperties(const std::string &path, const std::vector<std::string> &names) -> void {
+    std::ofstream dialogstream;
+    dialogstream.open(path);
+
+    for (const auto &name : names) {
+        dialogstream << "numOf" << name << "=1" << std::endl;
+    }
+
+    dialogstream.close();
+}
+
+auto generateGenTestConfigurationH(const std::string &path, const std::vector<std::string> &names) -> void {
+    std::ofstream dialogstream;
+    dialogstream.open(path);
+
+    dialogstream <<
+        R"(#pragma once
+
+#include <cstdint>
+
+namespace com::prog::testthebest {
+struct TestConfiguration {)"
+                 << std::endl;
+
+    for (const auto &name : names) {
+        dialogstream << "    uint8_t numOf" << name << " = 0;" << std::endl;
+    }
+
+    dialogstream <<
+        R"(};
+} // namespace com::prog::testthebest
+)";
+
+    dialogstream.close();
+}
+
+auto generateGenTestItemTypeH(const std::string &path, const std::vector<std::string> &names) -> void {
+    std::ofstream dialogstream;
+    dialogstream.open(path);
+
+    dialogstream <<
+        R"(#pragma once
+
+namespace com::prog::testthebest {
+enum class TestItemType {
+)";
+
+    bool first = true;
+    for (const auto &name : names) {
+        dialogstream << "    " << toScreamingSnakeCase(name);
+        if (first) {
+            dialogstream << " = 0";
+            first = false;
+        }
+        dialogstream << "," << std::endl;
+    }
+
+    dialogstream <<
+        R"(    MAX_TYPE
+};
+} // namespace com::prog::testthebest)";
+
+    dialogstream.close();
+}
+
+auto generateGenTestItemFactoryImplCpp(const std::string &path, const std::vector<std::string> &names) -> void {
+    std::ofstream dialogstream;
+    dialogstream.open(path);
+
+    dialogstream <<
+        R"(#include "TestItemFactoryImpl.h"
+
+#include "MultipleChoiceTestItem.h"
+)";
+
+    for (const auto &name : names) {
+        dialogstream << "#include \"TestItem" << name << ".h\"" << std::endl;
+    }
+
+    dialogstream <<
+        R"(
+namespace com::prog::testthebest {
+auto TestItemFactoryImpl::createTestItem(const TestItemType TestItemType) -> std::shared_ptr<TestItem> {
+    switch (TestItemType) {
+)";
+
+    for (const auto &name : names) {
+        dialogstream << "    case TestItemType::" << toScreamingSnakeCase(name) << ": {" << std::endl;
+        dialogstream << "        return std::make_shared<MultipleChoiceTestItem<TestItem" << name << ">>();" << std::endl;
+        dialogstream << "    }" << std::endl;
+    }
+
+    dialogstream <<
+        R"(    default: {
+        return nullptr;
+    }
+    }
+}
+} // namespace com::prog::testthebest)";
+
+    dialogstream.close();
+}
+
+auto generateGenTestItemListFactoryCpp(const std::string &path, const std::vector<std::string> &names) -> void {
+    std::ofstream dialogstream;
+    dialogstream.open(path);
+
+    dialogstream <<
+        R"(#include "TestItemListFactory.h"
+#include <iostream>
+namespace com::prog::testthebest {
+auto TestItemListFactory::fillConfigurationValue(TestConfiguration &configuration, std::string propertyName, uint8_t propertyValue) -> void {
+)";
+
+    for (const auto &name : names) {
+        dialogstream << "    if (propertyName == \"numOf" << name << "\") {" << std::endl;
+        dialogstream << "        configuration.numOf" << name << " = propertyValue;" << std::endl;
+        dialogstream << "        return;" << std::endl;
+        dialogstream << "    }" << std::endl;
+    }
+
+    dialogstream <<
+        R"(    std::cerr << "ERROR: unknown property name: " << propertyName << std::endl;
+}
+} // namespace com::prog::testthebest)";
+
+    dialogstream.close();
+}
+
+auto generateGenTestItemListFactoryImplCpp(const std::string &path, const std::vector<std::string> &names) -> void {
+    std::ofstream dialogstream;
+    dialogstream.open(path);
+
+    dialogstream <<
+        R"(#include "TestItemListFactoryImpl.h"
+namespace com::prog::testthebest {
+auto TestItemListFactoryImpl::getNumOfItems(const TestConfiguration &config, TestItemType type) -> uint8_t {
+    switch (type) {
+)";
+
+    for (const auto &name : names) {
+        dialogstream << "    case TestItemType::" << toScreamingSnakeCase(name) << ": {" << std::endl;
+        dialogstream << "        return config.numOf" << name << ";" << std::endl;
+        dialogstream << "    }" << std::endl;
+    }
+
+    dialogstream <<
+        R"(    default: {
+        return 0;
+    }
+    }
+}
+} // namespace com::prog::testthebest)";
+
+    dialogstream.close();
+}
+
 int main(int argc, char **args) {
     std::cout << "Starting CodeGen..." << std::endl;
 
@@ -36,14 +193,15 @@ int main(int argc, char **args) {
         std::cerr << "Number of arguments invalid: " << argc << std::endl;
     }
 
-    auto itemNames = getTestItemNames(args[1]);
-    for (const auto &name : itemNames) {
-        std::cout << toScreamingSnakeCase(name) << std::endl;
-    }
-
-    // std::ofstream dialogstream;
-    // dialogstream.open(fileName);
-    // dialogstream.close();
+    std::string rootPath(args[1]);
+    std::string testItemsPath(rootPath + "/TestTheBestApp/include/testitems/");
+    auto itemNames = getTestItemNames(testItemsPath);
+    generateProperties(rootPath + "/TestTheBest.properties", itemNames);
+    generateGenTestConfigurationH(rootPath + "/TestTheBestApp/include/testfactories/gen/GenTestConfiguration.h", itemNames);
+    generateGenTestItemTypeH(rootPath + "/TestTheBestApp/include/testfactories/gen/GenTestItemType.h", itemNames);
+    generateGenTestItemFactoryImplCpp(rootPath + "/TestTheBestApp/src/testfactories/gen/GenTestItemFactoryImpl.cpp", itemNames);
+    generateGenTestItemListFactoryCpp(rootPath + "/TestTheBestApp/src/testfactories/gen/GenTestItemListFactory.cpp", itemNames);
+    generateGenTestItemListFactoryImplCpp(rootPath + "/TestTheBestApp/src/testfactories/gen/GenTestItemListFactoryImpl.cpp", itemNames);
 
     std::cout << "CodeGen finished." << std::endl;
 }

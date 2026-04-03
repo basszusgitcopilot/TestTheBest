@@ -5,18 +5,17 @@
 namespace com::prog::testthebest {
 struct TestConfiguration {
     uint8_t numOfAddition = 0;
-    uint8_t numOfMcAddition = 0;
-    uint8_t numOfMcAlgebraLinearFactorization = 0;
-    uint8_t numOfMcAlgebraLinearFactorization3 = 0;
-    uint8_t numOfMcAlgebraQuadraticEquation = 0;
-    uint8_t numOfMcDifferentialRules = 0;
-    uint8_t numOfMcIntegralRules = 0;
-    uint8_t numOfMcIntegralDefiniteIntegral = 0;
-    uint8_t numOfMcStochasticBernoulliExperiment = 0;
-    uint8_t numOfMcStochasticCombination = 0;
-    uint8_t numOfMcStereoSphereSurfaceAreaVolume = 0;
-    uint8_t numOfMcStereoSphereVolume = 0;
-    uint8_t numOfMcVectorCrossProduct = 0;
-    uint8_t numOfMcVectorDotProduct = 0;
+    uint8_t numOfAlgebraLinearFactorization = 0;
+    uint8_t numOfAlgebraLinearFactorization3 = 0;
+    uint8_t numOfAlgebraQuadraticEquation = 0;
+    uint8_t numOfDifferentialRules = 0;
+    uint8_t numOfIntegralDefinite = 0;
+    uint8_t numOfIntegralRules = 0;
+    uint8_t numOfStereoSphereSurfaceVolume = 0;
+    uint8_t numOfStereoSphereVolume = 0;
+    uint8_t numOfStochasticBernoulliExperiment = 0;
+    uint8_t numOfStochasticCombination = 0;
+    uint8_t numOfVectorCrossProduct = 0;
+    uint8_t numOfVectorDotProduct = 0;
 };
 } // namespace com::prog::testthebest

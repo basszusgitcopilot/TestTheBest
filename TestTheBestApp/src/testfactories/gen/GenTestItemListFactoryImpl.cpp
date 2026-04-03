@@ -5,44 +5,41 @@ auto TestItemListFactoryImpl::getNumOfItems(const TestConfiguration &config, Tes
     case TestItemType::ADDITION: {
         return config.numOfAddition;
     }
-    case TestItemType::MC_ADDITION: {
-        return config.numOfMcAddition;
+    case TestItemType::ALGEBRA_LINEAR_FACTORIZATION: {
+        return config.numOfAlgebraLinearFactorization;
     }
-    case TestItemType::MC_ALGEBRA_QUADRATIC_EQUATION: {
-        return config.numOfMcAlgebraQuadraticEquation;
+    case TestItemType::ALGEBRA_LINEAR_FACTORIZATION_3: {
+        return config.numOfAlgebraLinearFactorization3;
     }
-    case TestItemType::MC_ALGEBRA_LINEAR_FACTORIZATION: {
-        return config.numOfMcAlgebraLinearFactorization;
+    case TestItemType::ALGEBRA_QUADRATIC_EQUATION: {
+        return config.numOfAlgebraQuadraticEquation;
     }
-    case TestItemType::MC_ALGEBRA_LINEAR_FACTORIZATION3: {
-        return config.numOfMcAlgebraLinearFactorization3;
+    case TestItemType::DIFFERENTIAL_RULES: {
+        return config.numOfDifferentialRules;
     }
-    case TestItemType::MC_INTEGRAL_DEFINITE_INTGRAL: {
-        return config.numOfMcIntegralDefiniteIntegral;
+    case TestItemType::INTEGRAL_DEFINITE: {
+        return config.numOfIntegralDefinite;
     }
-    case TestItemType::MC_INTEGRAL_RULES: {
-        return config.numOfMcIntegralRules;
+    case TestItemType::INTEGRAL_RULES: {
+        return config.numOfIntegralRules;
     }
-    case TestItemType::MC_DIFFERENTIAL_RULES: {
-        return config.numOfMcDifferentialRules;
+    case TestItemType::STEREO_SPHERE_SURFACE_VOLUME: {
+        return config.numOfStereoSphereSurfaceVolume;
     }
-    case TestItemType::MC_STEREO_SPHERE_SURFACEAREA_VOLUME: {
-        return config.numOfMcStereoSphereSurfaceAreaVolume;
+    case TestItemType::STEREO_SPHERE_VOLUME: {
+        return config.numOfStereoSphereVolume;
     }
-    case TestItemType::MC_STEREO_SPHERE_VOLUME: {
-        return config.numOfMcStereoSphereVolume;
+    case TestItemType::STOCHASTIC_BERNOULLI_EXPERIMENT: {
+        return config.numOfStochasticBernoulliExperiment;
     }
-    case TestItemType::MC_STOCHASTIC_BERNOULLI_EXPERIMENT: {
-        return config.numOfMcStochasticBernoulliExperiment;
+    case TestItemType::STOCHASTIC_COMBINATION: {
+        return config.numOfStochasticCombination;
     }
-    case TestItemType::MC_STOCHASTIC_COMBINATION: {
-        return config.numOfMcStochasticCombination;
+    case TestItemType::VECTOR_CROSS_PRODUCT: {
+        return config.numOfVectorCrossProduct;
     }
-    case TestItemType::MC_VECTOR_DOT_PRODUCT: {
-        return config.numOfMcVectorDotProduct;
-    }
-    case TestItemType::MC_VECTOR_CROSS_PRODUCT: {
-        return config.numOfMcVectorCrossProduct;
+    case TestItemType::VECTOR_DOT_PRODUCT: {
+        return config.numOfVectorDotProduct;
     }
     default: {
         return 0;

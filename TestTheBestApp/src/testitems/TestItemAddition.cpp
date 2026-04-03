@@ -18,7 +18,6 @@ auto TestItemAddition::operator==(const TestItem &other) const -> bool {
 auto TestItemAddition::getQuestion() -> std::string { return "Was ergibt " + std::to_string(a) + " + " + std::to_string(b) + "?\n"; }
 
 auto TestItemAddition::getRightAnswer() const -> std::string { return std::to_string(a + b); }
-
 auto TestItemAddition::checkAnswer(const std::string &answer) -> CheckAnswerResult {
     auto rightAnswer = getRightAnswer();
     return {answer == rightAnswer, rightAnswer};

@@ -6,60 +6,52 @@ auto TestItemListFactory::fillConfigurationValue(TestConfiguration &configuratio
         configuration.numOfAddition = propertyValue;
         return;
     }
-    if (propertyName == "numOfAddition") {
-        configuration.numOfAddition = propertyValue;
+    if (propertyName == "numOfAlgebraLinearFactorization") {
+        configuration.numOfAlgebraLinearFactorization = propertyValue;
         return;
     }
-    if (propertyName == "numOfMcAddition") {
-        configuration.numOfMcAddition = propertyValue;
+    if (propertyName == "numOfAlgebraLinearFactorization3") {
+        configuration.numOfAlgebraLinearFactorization3 = propertyValue;
         return;
     }
-    if (propertyName == "numOfMcAlgebraLinearFactorization") {
-        configuration.numOfMcAlgebraLinearFactorization = propertyValue;
+    if (propertyName == "numOfAlgebraQuadraticEquation") {
+        configuration.numOfAlgebraQuadraticEquation = propertyValue;
         return;
     }
-    if (propertyName == "numOfMcAlgebraLinearFactorization3") {
-        configuration.numOfMcAlgebraLinearFactorization3 = propertyValue;
+    if (propertyName == "numOfDifferentialRules") {
+        configuration.numOfDifferentialRules = propertyValue;
         return;
     }
-    if (propertyName == "numOfMcAlgebraQuadraticEquation") {
-        configuration.numOfMcAlgebraQuadraticEquation = propertyValue;
+    if (propertyName == "numOfIntegralDefinite") {
+        configuration.numOfIntegralDefinite = propertyValue;
         return;
     }
-    if (propertyName == "numOfMcIntegralDefiniteIntegral") {
-        configuration.numOfMcIntegralDefiniteIntegral = propertyValue;
+    if (propertyName == "numOfIntegralRules") {
+        configuration.numOfIntegralRules = propertyValue;
         return;
     }
-    if (propertyName == "numOfMcIntegralRules") {
-        configuration.numOfMcIntegralRules = propertyValue;
+    if (propertyName == "numOfStereoSphereSurfaceVolume") {
+        configuration.numOfStereoSphereSurfaceVolume = propertyValue;
         return;
     }
-    if (propertyName == "numOfMcDifferentialRules") {
-        configuration.numOfMcDifferentialRules = propertyValue;
+    if (propertyName == "numOfStereoSphereVolume") {
+        configuration.numOfStereoSphereVolume = propertyValue;
         return;
     }
-    if (propertyName == "numOfMcStereoSphereSurfaceAreaVolume") {
-        configuration.numOfMcStereoSphereSurfaceAreaVolume = propertyValue;
+    if (propertyName == "numOfStochasticBernoulliExperiment") {
+        configuration.numOfStochasticBernoulliExperiment = propertyValue;
         return;
     }
-    if (propertyName == "numOfMcStereoSphereVolume") {
-        configuration.numOfMcStereoSphereVolume = propertyValue;
+    if (propertyName == "numOfStochasticCombination") {
+        configuration.numOfStochasticCombination = propertyValue;
         return;
     }
-    if (propertyName == "numOfMcStochasticBernoulliExperiment") {
-        configuration.numOfMcStochasticBernoulliExperiment = propertyValue;
+    if (propertyName == "numOfVectorCrossProduct") {
+        configuration.numOfVectorCrossProduct = propertyValue;
         return;
     }
-    if (propertyName == "numOfMcStochasticCombination") {
-        configuration.numOfMcStochasticCombination = propertyValue;
-        return;
-    }
-    if (propertyName == "numOfMcVectorDotProduct") {
-        configuration.numOfMcVectorDotProduct = propertyValue;
-        return;
-    }
-    if (propertyName == "numOfMcVectorCrossProduct") {
-        configuration.numOfMcVectorCrossProduct = propertyValue;
+    if (propertyName == "numOfVectorDotProduct") {
+        configuration.numOfVectorDotProduct = propertyValue;
         return;
     }
     std::cerr << "ERROR: unknown property name: " << propertyName << std::endl;
