@@ -2,9 +2,6 @@
 namespace com::prog::testthebest {
 auto TestItemListFactoryImpl::getNumOfItems(const TestConfiguration &config, TestItemType type) -> uint8_t {
     switch (type) {
-    case TestItemType::ADDITION: {
-        return config.numOfAddition;
-    }
     case TestItemType::ALGEBRA_LINEAR_FACTORIZATION: {
         return config.numOfAlgebraLinearFactorization;
     }
@@ -13,6 +10,9 @@ auto TestItemListFactoryImpl::getNumOfItems(const TestConfiguration &config, Tes
     }
     case TestItemType::ALGEBRA_QUADRATIC_EQUATION: {
         return config.numOfAlgebraQuadraticEquation;
+    }
+    case TestItemType::ARITHMETIC_ADDITION: {
+        return config.numOfArithmeticAddition;
     }
     case TestItemType::DIFFERENTIAL_RULES: {
         return config.numOfDifferentialRules;

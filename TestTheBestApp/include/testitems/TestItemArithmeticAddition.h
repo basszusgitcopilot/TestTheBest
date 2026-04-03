@@ -6,9 +6,9 @@ using namespace com::prog::knowledgetest;
 
 namespace com::prog::testthebest {
 
-class TestItemAddition : public TestItem {
+class TestItemArithmeticAddition : public TestItem {
   public:
-    TestItemAddition();
+    TestItemArithmeticAddition();
     auto operator==(const TestItem &other) const -> bool override;
     auto getQuestion() -> std::string override;
     auto getRightAnswer() const -> std::string override;

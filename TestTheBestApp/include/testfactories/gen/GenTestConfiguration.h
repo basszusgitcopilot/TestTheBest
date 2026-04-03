@@ -4,10 +4,10 @@
 
 namespace com::prog::testthebest {
 struct TestConfiguration {
-    uint8_t numOfAddition = 0;
     uint8_t numOfAlgebraLinearFactorization = 0;
     uint8_t numOfAlgebraLinearFactorization3 = 0;
     uint8_t numOfAlgebraQuadraticEquation = 0;
+    uint8_t numOfArithmeticAddition = 0;
     uint8_t numOfDifferentialRules = 0;
     uint8_t numOfIntegralDefinite = 0;
     uint8_t numOfIntegralRules = 0;

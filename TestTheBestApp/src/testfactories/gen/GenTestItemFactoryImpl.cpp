@@ -1,10 +1,10 @@
 #include "TestItemFactoryImpl.h"
 
 #include "MultipleChoiceTestItem.h"
-#include "TestItemAddition.h"
 #include "TestItemAlgebraLinearFactorization.h"
 #include "TestItemAlgebraLinearFactorization3.h"
 #include "TestItemAlgebraQuadraticEquation.h"
+#include "TestItemArithmeticAddition.h"
 #include "TestItemDifferentialRules.h"
 #include "TestItemIntegralDefinite.h"
 #include "TestItemIntegralRules.h"
@@ -18,9 +18,6 @@
 namespace com::prog::testthebest {
 auto TestItemFactoryImpl::createTestItem(const TestItemType TestItemType) -> std::shared_ptr<TestItem> {
     switch (TestItemType) {
-    case TestItemType::ADDITION: {
-        return std::make_shared<MultipleChoiceTestItem<TestItemAddition>>();
-    }
     case TestItemType::ALGEBRA_LINEAR_FACTORIZATION: {
         return std::make_shared<MultipleChoiceTestItem<TestItemAlgebraLinearFactorization>>();
     }
@@ -29,6 +26,9 @@ auto TestItemFactoryImpl::createTestItem(const TestItemType TestItemType) -> std
     }
     case TestItemType::ALGEBRA_QUADRATIC_EQUATION: {
         return std::make_shared<MultipleChoiceTestItem<TestItemAlgebraQuadraticEquation>>();
+    }
+    case TestItemType::ARITHMETIC_ADDITION: {
+        return std::make_shared<MultipleChoiceTestItem<TestItemArithmeticAddition>>();
     }
     case TestItemType::DIFFERENTIAL_RULES: {
         return std::make_shared<MultipleChoiceTestItem<TestItemDifferentialRules>>();

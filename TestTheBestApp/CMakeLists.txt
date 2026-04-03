@@ -8,7 +8,7 @@ src/testfactories/TestItemListFactoryImpl.cpp
 src/testfactories/gen/GenTestItemFactoryImpl.cpp
 src/testfactories/gen/GenTestItemListFactory.cpp
 src/testfactories/gen/GenTestItemListFactoryImpl.cpp
-src/testitems/TestItemAddition.cpp
+src/testitems/TestItemArithmeticAddition.cpp
 src/testitems/TestItemAlgebraLinearFactorization.cpp
 src/testitems/TestItemAlgebraLinearFactorization3.cpp
 src/testitems/TestItemAlgebraQuadraticEquation.cpp

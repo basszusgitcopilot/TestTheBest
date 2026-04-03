@@ -2,10 +2,6 @@
 #include <iostream>
 namespace com::prog::testthebest {
 auto TestItemListFactory::fillConfigurationValue(TestConfiguration &configuration, std::string propertyName, uint8_t propertyValue) -> void {
-    if (propertyName == "numOfAddition") {
-        configuration.numOfAddition = propertyValue;
-        return;
-    }
     if (propertyName == "numOfAlgebraLinearFactorization") {
         configuration.numOfAlgebraLinearFactorization = propertyValue;
         return;
@@ -16,6 +12,10 @@ auto TestItemListFactory::fillConfigurationValue(TestConfiguration &configuratio
     }
     if (propertyName == "numOfAlgebraQuadraticEquation") {
         configuration.numOfAlgebraQuadraticEquation = propertyValue;
+        return;
+    }
+    if (propertyName == "numOfArithmeticAddition") {
+        configuration.numOfArithmeticAddition = propertyValue;
         return;
     }
     if (propertyName == "numOfDifferentialRules") {
