@@ -32,6 +32,7 @@ include
 include/testfactories
 include/testfactories/gen
 include/testitems
+include/testitems/common
 include/utils
 )
 
