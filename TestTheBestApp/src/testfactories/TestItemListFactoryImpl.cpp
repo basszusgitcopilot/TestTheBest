@@ -4,66 +4,15 @@
 
 namespace com::prog::testthebest {
 TestItemListFactoryImpl::TestItemListFactoryImpl() : testItemFactory{std::make_shared<TestItemFactoryImpl>()} {}
-
-auto TestItemListFactoryImpl::getNumOfItems(const TestItemListFactory::Configuration &config, TestItemFactory::Type type) -> uint8_t {
-    switch (type) {
-    case TestItemFactory::Type::ADDITION: {
-        return config.numOfAddition;
-    }
-    case TestItemFactory::Type::MC_ADDITION: {
-        return config.numOfMcAddition;
-    }
-    case TestItemFactory::Type::MC_ALGEBRA_QUADRATIC_EQUATION: {
-        return config.numOfMcAlgebraQuadraticEquation;
-    }
-    case TestItemFactory::Type::MC_ALGEBRA_LINEAR_FACTORIZATION: {
-        return config.numOfMcAlgebraLinearFactorization;
-    }
-    case TestItemFactory::Type::MC_ALGEBRA_LINEAR_FACTORIZATION3: {
-        return config.numOfMcAlgebraLinearFactorization3;
-    }
-    case TestItemFactory::Type::MC_INTEGRAL_DEFINITE_INTGRAL: {
-        return config.numOfMcIntegralDefiniteIntegral;
-    }
-    case TestItemFactory::Type::MC_INTEGRAL_RULES: {
-        return config.numOfMcIntegralRules;
-    }
-    case TestItemFactory::Type::MC_DIFFERENTIAL_RULES: {
-        return config.numOfMcDifferentialRules;
-    }
-    case TestItemFactory::Type::MC_STEREO_SPHERE_SURFACEAREA_VOLUME: {
-        return config.numOfMcStereoSphereSurfaceAreaVolume;
-    }
-    case TestItemFactory::Type::MC_STEREO_SPHERE_VOLUME: {
-        return config.numOfMcStereoSphereVolume;
-    }
-    case TestItemFactory::Type::MC_STOCHASTIC_BERNOULLI_EXPERIMENT: {
-        return config.numOfMcStochasticBernoulliExperiment;
-    }
-    case TestItemFactory::Type::MC_STOCHASTIC_COMBINATION: {
-        return config.numOfMcStochasticCombination;
-    }
-    case TestItemFactory::Type::MC_VECTOR_DOT_PRODUCT: {
-        return config.numOfMcVectorDotProduct;
-    }
-    case TestItemFactory::Type::MC_VECTOR_CROSS_PRODUCT: {
-        return config.numOfMcVectorCrossProduct;
-    }
-    default: {
-        return 0;
-    }
-    }
-}
-
-auto TestItemListFactoryImpl::createTestItemList(TestItemListFactory::Configuration config) -> std::vector<std::shared_ptr<KnowledgeTestItem>> {
+auto TestItemListFactoryImpl::createTestItemList(TestConfiguration config) -> std::vector<std::shared_ptr<KnowledgeTestItem>> {
     std::vector<std::shared_ptr<KnowledgeTestItem>> listAll;
-    for (uint8_t type = 0; type < static_cast<uint8_t>(TestItemFactory::Type::MAX_TYPE); ++type) {
-        auto num = getNumOfItems(config, static_cast<TestItemFactory::Type>(type));
+    for (uint8_t type = 0; type < static_cast<uint8_t>(TestItemType::MAX_TYPE); ++type) {
+        auto num = getNumOfItems(config, static_cast<TestItemType>(type));
         std::vector<std::shared_ptr<TestItem>> list;
         for (int8_t i = 0; i < num; ++i) {
             bool found;
             do {
-                auto item = testItemFactory->createTestItem(static_cast<TestItemFactory::Type>(type));
+                auto item = testItemFactory->createTestItem(static_cast<TestItemType>(type));
                 found = false;
                 for (const auto &it : list) {
                     if (*it == *item) {

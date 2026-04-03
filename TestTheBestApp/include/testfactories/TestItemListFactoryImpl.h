@@ -9,10 +9,10 @@ namespace com::prog::testthebest {
 class TestItemListFactoryImpl : public TestItemListFactory {
   public:
     TestItemListFactoryImpl();
-    auto createTestItemList(TestItemListFactory::Configuration config) -> std::vector<std::shared_ptr<KnowledgeTestItem>> override;
+    auto createTestItemList(TestConfiguration config) -> std::vector<std::shared_ptr<KnowledgeTestItem>> override;
 
   private:
     std::shared_ptr<TestItemFactory> testItemFactory;
-    auto getNumOfItems(const TestItemListFactory::Configuration &config, TestItemFactory::Type type) -> uint8_t;
+    auto getNumOfItems(const TestConfiguration &config, TestItemType type) -> uint8_t;
 };
 } // namespace com::prog::testthebest
