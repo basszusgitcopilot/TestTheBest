@@ -54,6 +54,10 @@ auto TestItemListFactory::fillConfigurationValue(TestConfiguration &configuratio
         configuration.numOfStochasticCombination = propertyValue;
         return;
     }
+    if (propertyName == "numOfTrigonometryRules") {
+        configuration.numOfTrigonometryRules = propertyValue;
+        return;
+    }
     if (propertyName == "numOfVectorCrossProduct") {
         configuration.numOfVectorCrossProduct = propertyValue;
         return;

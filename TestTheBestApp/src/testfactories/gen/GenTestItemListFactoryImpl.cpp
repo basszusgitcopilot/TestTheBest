@@ -41,6 +41,9 @@ auto TestItemListFactoryImpl::getNumOfItems(const TestConfiguration &config, Tes
     case TestItemType::STOCHASTIC_COMBINATION: {
         return config.numOfStochasticCombination;
     }
+    case TestItemType::TRIGONOMETRY_RULES: {
+        return config.numOfTrigonometryRules;
+    }
     case TestItemType::VECTOR_CROSS_PRODUCT: {
         return config.numOfVectorCrossProduct;
     }

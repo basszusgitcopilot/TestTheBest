@@ -14,6 +14,7 @@
 #include "TestItemStereoSphereVolume.h"
 #include "TestItemStochasticBernoulliExperiment.h"
 #include "TestItemStochasticCombination.h"
+#include "TestItemTrigonometryRules.h"
 #include "TestItemVectorCrossProduct.h"
 #include "TestItemVectorDotProduct.h"
 
@@ -58,6 +59,9 @@ auto TestItemFactoryImpl::createTestItem(const TestItemType TestItemType) -> std
     }
     case TestItemType::STOCHASTIC_COMBINATION: {
         return std::make_shared<MultipleChoiceTestItem<TestItemStochasticCombination>>();
+    }
+    case TestItemType::TRIGONOMETRY_RULES: {
+        return std::make_shared<MultipleChoiceTestItem<TestItemTrigonometryRules>>();
     }
     case TestItemType::VECTOR_CROSS_PRODUCT: {
         return std::make_shared<MultipleChoiceTestItem<TestItemVectorCrossProduct>>();
