@@ -10,6 +10,7 @@ struct TestConfiguration {
     uint8_t numOfArithmeticAddition = 0;
     uint8_t numOfArithmeticSubstraction = 0;
     uint8_t numOfDifferentialRules = 0;
+    uint8_t numOfFunctionsInverse = 0;
     uint8_t numOfIntegralDefinite = 0;
     uint8_t numOfIntegralRules = 0;
     uint8_t numOfStereoSphereSurfaceVolume = 0;

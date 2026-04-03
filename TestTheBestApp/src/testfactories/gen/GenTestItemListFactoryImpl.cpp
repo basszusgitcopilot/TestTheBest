@@ -20,6 +20,9 @@ auto TestItemListFactoryImpl::getNumOfItems(const TestConfiguration &config, Tes
     case TestItemType::DIFFERENTIAL_RULES: {
         return config.numOfDifferentialRules;
     }
+    case TestItemType::FUNCTIONS_INVERSE: {
+        return config.numOfFunctionsInverse;
+    }
     case TestItemType::INTEGRAL_DEFINITE: {
         return config.numOfIntegralDefinite;
     }

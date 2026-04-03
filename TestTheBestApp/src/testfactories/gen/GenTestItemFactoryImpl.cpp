@@ -7,6 +7,7 @@
 #include "TestItemArithmeticAddition.h"
 #include "TestItemArithmeticSubstraction.h"
 #include "TestItemDifferentialRules.h"
+#include "TestItemFunctionsInverse.h"
 #include "TestItemIntegralDefinite.h"
 #include "TestItemIntegralRules.h"
 #include "TestItemStereoSphereSurfaceVolume.h"
@@ -36,6 +37,9 @@ auto TestItemFactoryImpl::createTestItem(const TestItemType TestItemType) -> std
     }
     case TestItemType::DIFFERENTIAL_RULES: {
         return std::make_shared<MultipleChoiceTestItem<TestItemDifferentialRules>>();
+    }
+    case TestItemType::FUNCTIONS_INVERSE: {
+        return std::make_shared<MultipleChoiceTestItem<TestItemFunctionsInverse>>();
     }
     case TestItemType::INTEGRAL_DEFINITE: {
         return std::make_shared<MultipleChoiceTestItem<TestItemIntegralDefinite>>();

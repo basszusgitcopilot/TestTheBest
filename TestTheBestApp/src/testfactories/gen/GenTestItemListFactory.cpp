@@ -26,6 +26,10 @@ auto TestItemListFactory::fillConfigurationValue(TestConfiguration &configuratio
         configuration.numOfDifferentialRules = propertyValue;
         return;
     }
+    if (propertyName == "numOfFunctionsInverse") {
+        configuration.numOfFunctionsInverse = propertyValue;
+        return;
+    }
     if (propertyName == "numOfIntegralDefinite") {
         configuration.numOfIntegralDefinite = propertyValue;
         return;
