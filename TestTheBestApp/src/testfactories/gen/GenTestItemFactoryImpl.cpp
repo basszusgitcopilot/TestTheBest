@@ -5,9 +5,9 @@
 #include "TestItemAlgebraLinearFactorization.h"
 #include "TestItemAlgebraLinearFactorization3.h"
 #include "TestItemAlgebraQuadraticEquation.h"
-#include "TestItemDefiniteIntegral.h"
 #include "TestItemDifferentialRules.h"
 #include "TestItemFactory.h"
+#include "TestItemIntegralDefinite.h"
 #include "TestItemIntegralRules.h"
 #include "TestItemStereoSphereSurfaceVolume.h"
 #include "TestItemStereoSphereVolume.h"
@@ -38,7 +38,7 @@ auto TestItemFactoryImpl::createTestItem(const TestItemType TestItemType) -> std
         return std::make_shared<MultipleChoiceTestItem<TestItemDifferentialRules>>();
     }
     case TestItemType::MC_INTEGRAL_DEFINITE_INTGRAL: {
-        return std::make_shared<MultipleChoiceTestItem<TestItemDefiniteIntegral>>();
+        return std::make_shared<MultipleChoiceTestItem<TestItemIntegralDefinite>>();
     }
     case TestItemType::MC_INTEGRAL_RULES: {
         return std::make_shared<MultipleChoiceTestItem<TestItemIntegralRules>>();

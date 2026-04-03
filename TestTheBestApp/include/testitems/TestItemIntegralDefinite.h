@@ -9,9 +9,9 @@ using namespace com::prog::knowledgetest;
 
 namespace com::prog::testthebest {
 
-class TestItemDefiniteIntegral : public TestItem {
+class TestItemIntegralDefinite : public TestItem {
   public:
-    TestItemDefiniteIntegral();
+    TestItemIntegralDefinite();
     auto operator==(const TestItem &other) const -> bool override;
     auto getQuestion() -> std::string override;
     auto getRightAnswer() const -> std::string override;
