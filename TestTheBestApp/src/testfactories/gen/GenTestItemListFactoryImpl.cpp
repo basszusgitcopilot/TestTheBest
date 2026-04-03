@@ -14,6 +14,9 @@ auto TestItemListFactoryImpl::getNumOfItems(const TestConfiguration &config, Tes
     case TestItemType::ARITHMETIC_ADDITION: {
         return config.numOfArithmeticAddition;
     }
+    case TestItemType::ARITHMETIC_SUBSTRACTION: {
+        return config.numOfArithmeticSubstraction;
+    }
     case TestItemType::DIFFERENTIAL_RULES: {
         return config.numOfDifferentialRules;
     }

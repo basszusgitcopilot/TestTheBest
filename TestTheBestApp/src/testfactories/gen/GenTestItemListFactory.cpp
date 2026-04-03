@@ -18,6 +18,10 @@ auto TestItemListFactory::fillConfigurationValue(TestConfiguration &configuratio
         configuration.numOfArithmeticAddition = propertyValue;
         return;
     }
+    if (propertyName == "numOfArithmeticSubstraction") {
+        configuration.numOfArithmeticSubstraction = propertyValue;
+        return;
+    }
     if (propertyName == "numOfDifferentialRules") {
         configuration.numOfDifferentialRules = propertyValue;
         return;

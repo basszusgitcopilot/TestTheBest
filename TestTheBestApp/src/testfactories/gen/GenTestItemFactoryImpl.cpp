@@ -5,6 +5,7 @@
 #include "TestItemAlgebraLinearFactorization3.h"
 #include "TestItemAlgebraQuadraticEquation.h"
 #include "TestItemArithmeticAddition.h"
+#include "TestItemArithmeticSubstraction.h"
 #include "TestItemDifferentialRules.h"
 #include "TestItemIntegralDefinite.h"
 #include "TestItemIntegralRules.h"
@@ -29,6 +30,9 @@ auto TestItemFactoryImpl::createTestItem(const TestItemType TestItemType) -> std
     }
     case TestItemType::ARITHMETIC_ADDITION: {
         return std::make_shared<MultipleChoiceTestItem<TestItemArithmeticAddition>>();
+    }
+    case TestItemType::ARITHMETIC_SUBSTRACTION: {
+        return std::make_shared<MultipleChoiceTestItem<TestItemArithmeticSubstraction>>();
     }
     case TestItemType::DIFFERENTIAL_RULES: {
         return std::make_shared<MultipleChoiceTestItem<TestItemDifferentialRules>>();
