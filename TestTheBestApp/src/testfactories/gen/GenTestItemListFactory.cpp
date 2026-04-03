@@ -10,6 +10,10 @@ auto TestItemListFactory::fillConfigurationValue(TestConfiguration &configuratio
         configuration.numOfAlgebraLinearFactorization3 = propertyValue;
         return;
     }
+    if (propertyName == "numOfAlgebraLogarithmRules") {
+        configuration.numOfAlgebraLogarithmRules = propertyValue;
+        return;
+    }
     if (propertyName == "numOfAlgebraQuadraticEquation") {
         configuration.numOfAlgebraQuadraticEquation = propertyValue;
         return;

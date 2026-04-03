@@ -8,6 +8,9 @@ auto TestItemListFactoryImpl::getNumOfItems(const TestConfiguration &config, Tes
     case TestItemType::ALGEBRA_LINEAR_FACTORIZATION_3: {
         return config.numOfAlgebraLinearFactorization3;
     }
+    case TestItemType::ALGEBRA_LOGARITHM_RULES: {
+        return config.numOfAlgebraLogarithmRules;
+    }
     case TestItemType::ALGEBRA_QUADRATIC_EQUATION: {
         return config.numOfAlgebraQuadraticEquation;
     }
