@@ -10,6 +10,8 @@ TestItemArithmeticSubstraction::TestItemArithmeticSubstraction() {
     b = createRandomNumber(min, max);
 }
 
+auto TestItemArithmeticSubstraction::getMaxNumOfQuestions() const -> uint16_t { return std::numeric_limits<uint16_t>::max(); }
+
 auto TestItemArithmeticSubstraction::operator==(const TestItem &other) const -> bool {
     const TestItemArithmeticSubstraction &otherItem = dynamic_cast<const TestItemArithmeticSubstraction &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();

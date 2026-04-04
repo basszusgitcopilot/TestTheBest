@@ -9,6 +9,8 @@ TestItemTrigonometryRules::TestItemTrigonometryRules() {
     selectedIndex = createRandomNumber(min, max);
 }
 
+auto TestItemTrigonometryRules::getMaxNumOfQuestions() const -> uint16_t { return rules.size(); }
+
 auto TestItemTrigonometryRules::operator==(const TestItem &other) const -> bool {
     const TestItemTrigonometryRules &otherItem = dynamic_cast<const TestItemTrigonometryRules &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();

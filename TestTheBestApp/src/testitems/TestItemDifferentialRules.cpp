@@ -9,6 +9,8 @@ TestItemDifferentialRules::TestItemDifferentialRules() {
     ruleIndex = createRandomNumber(min, max);
 }
 
+auto TestItemDifferentialRules::getMaxNumOfQuestions() const -> uint16_t { return rules.size(); }
+
 auto TestItemDifferentialRules::operator==(const TestItem &other) const -> bool {
     const TestItemDifferentialRules &otherItem = dynamic_cast<const TestItemDifferentialRules &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();

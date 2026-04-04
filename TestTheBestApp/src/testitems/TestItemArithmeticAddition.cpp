@@ -10,6 +10,8 @@ TestItemArithmeticAddition::TestItemArithmeticAddition() {
     b = createRandomNumber(min, max);
 }
 
+auto TestItemArithmeticAddition::getMaxNumOfQuestions() const -> uint16_t { return std::numeric_limits<uint16_t>::max(); }
+
 auto TestItemArithmeticAddition::operator==(const TestItem &other) const -> bool {
     const TestItemArithmeticAddition &otherItem = dynamic_cast<const TestItemArithmeticAddition &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();

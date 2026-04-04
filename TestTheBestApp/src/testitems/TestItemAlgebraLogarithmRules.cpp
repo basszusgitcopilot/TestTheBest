@@ -9,6 +9,8 @@ TestItemAlgebraLogarithmRules::TestItemAlgebraLogarithmRules() {
     selectedIndex = createRandomNumber(min, max);
 }
 
+auto TestItemAlgebraLogarithmRules::getMaxNumOfQuestions() const -> uint16_t { return rules.size(); }
+
 auto TestItemAlgebraLogarithmRules::operator==(const TestItem &other) const -> bool {
     const TestItemAlgebraLogarithmRules &otherItem = dynamic_cast<const TestItemAlgebraLogarithmRules &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();

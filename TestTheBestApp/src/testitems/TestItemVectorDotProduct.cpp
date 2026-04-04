@@ -14,6 +14,8 @@ TestItemVectorDotProduct::TestItemVectorDotProduct() {
     b3 = createRandomNumber(min, max);
 }
 
+auto TestItemVectorDotProduct::getMaxNumOfQuestions() const -> uint16_t { return std::numeric_limits<uint16_t>::max(); }
+
 auto TestItemVectorDotProduct::operator==(const TestItem &other) const -> bool {
     const TestItemVectorDotProduct &otherItem = dynamic_cast<const TestItemVectorDotProduct &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();

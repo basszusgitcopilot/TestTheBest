@@ -25,6 +25,8 @@ template <class T> class MultipleChoiceTestItem : public TestItem {
         rightSelection = createRandomNumber<uint8_t>(1, testItemList.size());
     };
 
+    auto getMaxNumOfQuestions() const -> uint16_t { return testItemList.at(rightSelection - 1)->getMaxNumOfQuestions(); };
+
     auto getSelectedItemQuestion() const -> std::string { return testItemList.at(rightSelection - 1)->getQuestion(); }
 
     auto operator==(const TestItem &other) const -> bool {

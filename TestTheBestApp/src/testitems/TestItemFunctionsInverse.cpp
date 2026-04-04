@@ -9,6 +9,8 @@ TestItemFunctionsInverse::TestItemFunctionsInverse() {
     selectedIndex = createRandomNumber(min, max);
 }
 
+auto TestItemFunctionsInverse::getMaxNumOfQuestions() const -> uint16_t { return rules.size(); }
+
 auto TestItemFunctionsInverse::operator==(const TestItem &other) const -> bool {
     const TestItemFunctionsInverse &otherItem = dynamic_cast<const TestItemFunctionsInverse &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();

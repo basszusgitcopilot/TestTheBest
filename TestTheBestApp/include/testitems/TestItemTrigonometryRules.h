@@ -13,6 +13,7 @@ class TestItemTrigonometryRules : public TestItem {
     auto getQuestion() const -> std::string override;
     auto getRightAnswer() const -> std::string override;
     auto checkAnswer(const std::string &answer) -> CheckAnswerResult override;
+    auto getMaxNumOfQuestions() const -> uint16_t override;
 
   private:
     int32_t selectedIndex;

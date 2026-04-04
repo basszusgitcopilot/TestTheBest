@@ -9,6 +9,8 @@ TestItemStereoCalculations::TestItemStereoCalculations() {
     surfaceArea = createRandomNumber(min, max);
 }
 
+auto TestItemStereoCalculations::getMaxNumOfQuestions() const -> uint16_t { return std::numeric_limits<uint16_t>::max(); }
+
 auto TestItemStereoCalculations::operator==(const TestItem &other) const -> bool {
     const TestItemStereoCalculations &otherItem = dynamic_cast<const TestItemStereoCalculations &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();

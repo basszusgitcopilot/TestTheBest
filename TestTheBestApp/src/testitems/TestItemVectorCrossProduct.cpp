@@ -14,6 +14,8 @@ TestItemVectorCrossProduct::TestItemVectorCrossProduct() {
     b3 = createRandomNumber(min, max);
 }
 
+auto TestItemVectorCrossProduct::getMaxNumOfQuestions() const -> uint16_t { return std::numeric_limits<uint16_t>::max(); }
+
 auto TestItemVectorCrossProduct::operator==(const TestItem &other) const -> bool {
     const TestItemVectorCrossProduct &otherItem = dynamic_cast<const TestItemVectorCrossProduct &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();

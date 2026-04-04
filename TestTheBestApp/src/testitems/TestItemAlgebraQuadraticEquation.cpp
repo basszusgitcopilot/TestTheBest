@@ -11,6 +11,8 @@ TestItemAlgebraQuadraticEquation::TestItemAlgebraQuadraticEquation() {
     c = createRandomNumber(min, max);
 }
 
+auto TestItemAlgebraQuadraticEquation::getMaxNumOfQuestions() const -> uint16_t { return std::numeric_limits<uint16_t>::max(); }
+
 auto TestItemAlgebraQuadraticEquation::operator==(const TestItem &other) const -> bool {
     const TestItemAlgebraQuadraticEquation &otherItem = dynamic_cast<const TestItemAlgebraQuadraticEquation &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();

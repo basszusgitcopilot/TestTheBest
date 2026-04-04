@@ -9,6 +9,8 @@ TestItemStereoSphereVolume::TestItemStereoSphereVolume() {
     surfaceArea = createRandomNumber(min, max);
 }
 
+auto TestItemStereoSphereVolume::getMaxNumOfQuestions() const -> uint16_t { return std::numeric_limits<uint16_t>::max(); }
+
 auto TestItemStereoSphereVolume::operator==(const TestItem &other) const -> bool {
     const TestItemStereoSphereVolume &otherItem = dynamic_cast<const TestItemStereoSphereVolume &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();

@@ -21,6 +21,8 @@ TestItemStochasticBernoulliExperiment::TestItemStochasticBernoulliExperiment() {
     questionIndex = createRandomNumber(static_cast<uint8_t>(0), static_cast<uint8_t>(possibleQuestions.size() - 1));
 }
 
+auto TestItemStochasticBernoulliExperiment::getMaxNumOfQuestions() const -> uint16_t { return std::numeric_limits<uint16_t>::max(); }
+
 auto TestItemStochasticBernoulliExperiment::operator==(const TestItem &other) const -> bool {
     const TestItemStochasticBernoulliExperiment &otherItem = dynamic_cast<const TestItemStochasticBernoulliExperiment &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();

@@ -16,6 +16,7 @@ class TestItemStereoRules : public TestItem {
     auto getQuestion() const -> std::string override;
     auto getRightAnswer() const -> std::string override;
     auto checkAnswer(const std::string &answer) -> CheckAnswerResult override;
+    auto getMaxNumOfQuestions() const -> uint16_t override;
 
   private:
     int32_t ruleIndex;
@@ -28,7 +29,7 @@ class TestItemStereoRules : public TestItem {
         {"das Volumen eines Prismas", "Grundfläche⋅h"},                       //
         {"die Oberfläche eines Prismas", "2⋅Grundfläche + Mantelfläche"},     //
         {"das Volumen einer Pyramide", "Grundfläche⋅h/3"},                    //
-        {"die Oberfläche eines Prismas", "Grundfläche + Mantelfläche"},       //
+        {"die Oberfläche einer Pyramide", "Grundfläche + Mantelfläche"},      //
         {"das Volumen eines Tetraeders", "(a³√2)/12"},                        //
         {"die Oberfläche eines Tetraeders", "a²√3"},                          //
         {"das Volumen eines Zylinders", "r²⋅π⋅h"},                            //

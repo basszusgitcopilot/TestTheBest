@@ -39,7 +39,7 @@ class TestTheBestApp {
     static auto useStatistics(KnowledgeTestDialogRunner::KnowledgeTestDialogStatus testDialogStatus,
                               KnowledgeTestDialogRunner::KnowledgeTestDialogRunnerStatistic statistics) -> void {
         if (testDialogStatus == KnowledgeTestDialogRunner::KnowledgeTestDialogStatus::START_TURN) {
-            std::cout << "Anzahl verbleibende Fragen: " << statistics.numOfRemainingTestItems << std::endl;
+            std::cout << "Anzahl verbleibender Fragen: " << statistics.numOfRemainingTestItems << std::endl;
         } else if (testDialogStatus == KnowledgeTestDialogRunner::KnowledgeTestDialogStatus::ENDED) {
             std::cout << "Anzahl der Fragen: " << statistics.numOfTestItems << std::endl;
             std::cout << "Anzahl korrekter Antworten: " << statistics.numOfCorrectAnswers << std::endl;
