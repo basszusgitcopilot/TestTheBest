@@ -11,6 +11,7 @@
 #include "TestItemFunctionsInverse.h"
 #include "TestItemIntegralDefinite.h"
 #include "TestItemIntegralRules.h"
+#include "TestItemStereoCalculations.h"
 #include "TestItemStereoRules.h"
 #include "TestItemStereoSphereSurfaceVolume.h"
 #include "TestItemStereoSphereVolume.h"
@@ -52,6 +53,9 @@ auto TestItemFactoryImpl::createTestItem(const TestItemType TestItemType) -> std
     }
     case TestItemType::INTEGRAL_RULES: {
         return std::make_shared<MultipleChoiceTestItem<TestItemIntegralRules>>();
+    }
+    case TestItemType::STEREO_CALCULATIONS: {
+        return std::make_shared<MultipleChoiceTestItem<TestItemStereoCalculations>>();
     }
     case TestItemType::STEREO_RULES: {
         return std::make_shared<MultipleChoiceTestItem<TestItemStereoRules>>();

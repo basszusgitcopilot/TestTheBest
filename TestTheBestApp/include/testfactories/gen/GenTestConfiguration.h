@@ -14,6 +14,7 @@ struct TestConfiguration {
     uint8_t numOfFunctionsInverse = 0;
     uint8_t numOfIntegralDefinite = 0;
     uint8_t numOfIntegralRules = 0;
+    uint8_t numOfStereoCalculations = 0;
     uint8_t numOfStereoRules = 0;
     uint8_t numOfStereoSphereSurfaceVolume = 0;
     uint8_t numOfStereoSphereVolume = 0;

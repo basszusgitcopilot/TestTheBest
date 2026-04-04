@@ -32,6 +32,9 @@ auto TestItemListFactoryImpl::getNumOfItems(const TestConfiguration &config, Tes
     case TestItemType::INTEGRAL_RULES: {
         return config.numOfIntegralRules;
     }
+    case TestItemType::STEREO_CALCULATIONS: {
+        return config.numOfStereoCalculations;
+    }
     case TestItemType::STEREO_RULES: {
         return config.numOfStereoRules;
     }
