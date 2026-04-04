@@ -9,22 +9,22 @@ using namespace com::prog::knowledgetest;
 
 namespace com::prog::testthebest {
 
-class TestItemIntegralDefinite : public TestItem {
+class TestItemStereoRules : public TestItem {
   public:
-    TestItemIntegralDefinite();
+    TestItemStereoRules();
     auto operator==(const TestItem &other) const -> bool override;
     auto getQuestion() const -> std::string override;
     auto getRightAnswer() const -> std::string override;
     auto checkAnswer(const std::string &answer) -> CheckAnswerResult override;
 
   private:
-    int32_t ax3 = 0;
-    int32_t ax2 = 0;
-    int32_t ax1 = 0;
-    int32_t ax0 = 0;
-    int32_t t0 = 0;
-    int32_t t1 = 0;
+    int32_t ruleIndex;
 
-    auto calculateIntegralValue(double t) const -> double;
+    const std::vector<std::pair<std::string, std::string>> rules{
+        {"das Volumen eines Würfels", "a³"},                 //
+        {"die Oberfläche eines Würfels", "6a²"},             //
+        {"das Volumen eines Quaders", "a⋅b⋅c"},              //
+        {"die Oberfläche eines Quaders", "2(ab + ac + bc)"}, //
+    };
 };
 } // namespace com::prog::testthebest

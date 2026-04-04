@@ -11,10 +11,10 @@ TestItemAlgebraLogarithmRules::TestItemAlgebraLogarithmRules() {
 
 auto TestItemAlgebraLogarithmRules::operator==(const TestItem &other) const -> bool {
     const TestItemAlgebraLogarithmRules &otherItem = dynamic_cast<const TestItemAlgebraLogarithmRules &>(other);
-    return getRightAnswer() == otherItem.getRightAnswer();
+    return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 
-auto TestItemAlgebraLogarithmRules::getQuestion() -> std::string {
+auto TestItemAlgebraLogarithmRules::getQuestion() const -> std::string {
     return "Wie kann man die Gleichung fortsetzen? " + rules.at(selectedIndex).first + " = ... \n";
 }
 

@@ -12,10 +12,10 @@ TestItemArithmeticAddition::TestItemArithmeticAddition() {
 
 auto TestItemArithmeticAddition::operator==(const TestItem &other) const -> bool {
     const TestItemArithmeticAddition &otherItem = dynamic_cast<const TestItemArithmeticAddition &>(other);
-    return getRightAnswer() == otherItem.getRightAnswer();
+    return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 
-auto TestItemArithmeticAddition::getQuestion() -> std::string { return "Was ergibt " + std::to_string(a) + " + " + std::to_string(b) + "?\n"; }
+auto TestItemArithmeticAddition::getQuestion() const -> std::string { return "Was ergibt " + std::to_string(a) + " + " + std::to_string(b) + "?\n"; }
 
 auto TestItemArithmeticAddition::getRightAnswer() const -> std::string { return std::to_string(a + b); }
 auto TestItemArithmeticAddition::checkAnswer(const std::string &answer) -> CheckAnswerResult {

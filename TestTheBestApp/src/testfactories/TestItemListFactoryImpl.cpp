@@ -1,6 +1,5 @@
 #include "TestItemListFactoryImpl.h"
 #include "TestItemFactoryImpl.h"
-#include <iostream>
 
 namespace com::prog::testthebest {
 TestItemListFactoryImpl::TestItemListFactoryImpl() : testItemFactory{std::make_shared<TestItemFactoryImpl>()} {}
@@ -16,7 +15,8 @@ auto TestItemListFactoryImpl::createTestItemList(TestConfiguration config) -> st
                 found = false;
                 for (const auto &it : list) {
                     if (*it == *item) {
-                        found;
+                        found = true;
+                        break;
                     }
                 }
                 if (!found) {

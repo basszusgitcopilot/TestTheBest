@@ -16,10 +16,10 @@ TestItemIntegralDefinite::TestItemIntegralDefinite() {
 
 auto TestItemIntegralDefinite::operator==(const TestItem &other) const -> bool {
     const TestItemIntegralDefinite &otherItem = dynamic_cast<const TestItemIntegralDefinite &>(other);
-    return getRightAnswer() == otherItem.getRightAnswer();
+    return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 
-auto TestItemIntegralDefinite::getQuestion() -> std::string {
+auto TestItemIntegralDefinite::getQuestion() const -> std::string {
     return "Die Geschwindigkeit einer Turboschnecke (helix celeris) kann man mit folgender Funktion beschreiben: v(t) = " + numberToString(ax3, 0) + "t³ + " +
            numberToString(ax2, 0) + "t² + " + numberToString(ax1, 0) + "t + " + numberToString(ax0, 0) +
            ". Wie lang ist der Weg, die sie zwischnen t0 = " + numberToString(t0, 0) + " und t1 = " + numberToString(t1, 0) + " macht?";

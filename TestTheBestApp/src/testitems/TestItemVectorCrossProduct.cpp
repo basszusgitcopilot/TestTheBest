@@ -16,10 +16,10 @@ TestItemVectorCrossProduct::TestItemVectorCrossProduct() {
 
 auto TestItemVectorCrossProduct::operator==(const TestItem &other) const -> bool {
     const TestItemVectorCrossProduct &otherItem = dynamic_cast<const TestItemVectorCrossProduct &>(other);
-    return getRightAnswer() == otherItem.getRightAnswer();
+    return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 
-auto TestItemVectorCrossProduct::getQuestion() -> std::string {
+auto TestItemVectorCrossProduct::getQuestion() const -> std::string {
     return "Hektor möchte den Vektorprodukt (Kreuzprodukt) von zwei Vektoren bekommen: (" + std::to_string(a1) + ", " + std::to_string(a2) + ", " +
            std::to_string(a3) + ")⨯(" + std::to_string(b1) + ", " + std::to_string(b2) + ", " + std::to_string(b3) +
            "). Welches Ergebnis bekommt er, wenn er richtig rechnet?\n";

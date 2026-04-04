@@ -42,6 +42,10 @@ auto TestItemListFactory::fillConfigurationValue(TestConfiguration &configuratio
         configuration.numOfIntegralRules = propertyValue;
         return;
     }
+    if (propertyName == "numOfStereoRules") {
+        configuration.numOfStereoRules = propertyValue;
+        return;
+    }
     if (propertyName == "numOfStereoSphereSurfaceVolume") {
         configuration.numOfStereoSphereSurfaceVolume = propertyValue;
         return;

@@ -16,10 +16,10 @@ TestItemVectorDotProduct::TestItemVectorDotProduct() {
 
 auto TestItemVectorDotProduct::operator==(const TestItem &other) const -> bool {
     const TestItemVectorDotProduct &otherItem = dynamic_cast<const TestItemVectorDotProduct &>(other);
-    return getRightAnswer() == otherItem.getRightAnswer();
+    return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 
-auto TestItemVectorDotProduct::getQuestion() -> std::string {
+auto TestItemVectorDotProduct::getQuestion() const -> std::string {
     return "Viktor möchte den Skalarprodukt von zwei Vektoren bekommen: (" + std::to_string(a1) + ", " + std::to_string(a2) + ", " + std::to_string(a3) +
            ")⋅(" + std::to_string(b1) + ", " + std::to_string(b2) + ", " + std::to_string(b3) +
            "). Welches Ergebnis bekommt er, wenn er richtig rechnet? Wie groß ist der Winkel zwischen den zwei Vektoren?\n";

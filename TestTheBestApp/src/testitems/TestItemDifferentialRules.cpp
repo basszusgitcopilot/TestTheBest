@@ -11,10 +11,10 @@ TestItemDifferentialRules::TestItemDifferentialRules() {
 
 auto TestItemDifferentialRules::operator==(const TestItem &other) const -> bool {
     const TestItemDifferentialRules &otherItem = dynamic_cast<const TestItemDifferentialRules &>(other);
-    return getRightAnswer() == otherItem.getRightAnswer();
+    return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 
-auto TestItemDifferentialRules::getQuestion() -> std::string { return "Was ist die Ableitung von " + rules.at(ruleIndex).first + " ?\n"; }
+auto TestItemDifferentialRules::getQuestion() const -> std::string { return "Was ist die Ableitung von " + rules.at(ruleIndex).first + " ?\n"; }
 
 auto TestItemDifferentialRules::getRightAnswer() const -> std::string { return rules.at(ruleIndex).second; }
 

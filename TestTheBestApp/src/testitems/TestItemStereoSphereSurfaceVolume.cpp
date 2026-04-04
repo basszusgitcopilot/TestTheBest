@@ -11,10 +11,10 @@ TestItemStereoSphereSurfaceVolume::TestItemStereoSphereSurfaceVolume() {
 
 auto TestItemStereoSphereSurfaceVolume::operator==(const TestItem &other) const -> bool {
     const TestItemStereoSphereSurfaceVolume &otherItem = dynamic_cast<const TestItemStereoSphereSurfaceVolume &>(other);
-    return getRightAnswer() == otherItem.getRightAnswer();
+    return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 
-auto TestItemStereoSphereSurfaceVolume::getQuestion() -> std::string {
+auto TestItemStereoSphereSurfaceVolume::getQuestion() const -> std::string {
     return "Gegeben ist eine Kugel mit dem Radius r = " + numberToString(radius, 0) + " cm. Gesucht ist die Oberfläche und das Volumen.";
 }
 

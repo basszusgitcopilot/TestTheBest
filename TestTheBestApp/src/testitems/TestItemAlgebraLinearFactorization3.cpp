@@ -1,6 +1,5 @@
 #include "TestItemAlgebraLinearFactorization3.h"
 #include "MathUtils.h"
-#include <iostream>
 
 namespace com::prog::testthebest {
 
@@ -14,10 +13,10 @@ TestItemAlgebraLinearFactorization3::TestItemAlgebraLinearFactorization3() {
 
 auto TestItemAlgebraLinearFactorization3::operator==(const TestItem &other) const -> bool {
     const TestItemAlgebraLinearFactorization3 &otherItem = dynamic_cast<const TestItemAlgebraLinearFactorization3 &>(other);
-    return getRightAnswer() == otherItem.getRightAnswer();
+    return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 
-auto TestItemAlgebraLinearFactorization3::getQuestion() -> std::string {
+auto TestItemAlgebraLinearFactorization3::getQuestion() const -> std::string {
     // (x+a)(x+b)(x+c) = (x²+(a+b)x+ab)(x+c) = x³+(a+b)x²+abx+cx²+c(a+b)x+cab = x³+(a+b+c)x²+(ab+ca+cb)x+cab
     return "Welche Zerlegung entspricht dieser Gleichung: x³ + " + numberToString(a + b + c, 0) + "x² + " + numberToString(a * b + b * c + c * a, 0) + "x + " +
            numberToString(a * b * c, 0) + " = 0";

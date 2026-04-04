@@ -11,10 +11,10 @@ TestItemFunctionsInverse::TestItemFunctionsInverse() {
 
 auto TestItemFunctionsInverse::operator==(const TestItem &other) const -> bool {
     const TestItemFunctionsInverse &otherItem = dynamic_cast<const TestItemFunctionsInverse &>(other);
-    return getRightAnswer() == otherItem.getRightAnswer();
+    return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 
-auto TestItemFunctionsInverse::getQuestion() -> std::string { return "Was ist die Inversfunktion von " + rules.at(selectedIndex).first + " ?\n"; }
+auto TestItemFunctionsInverse::getQuestion() const -> std::string { return "Was ist die Inversfunktion von " + rules.at(selectedIndex).first + " ?\n"; }
 
 auto TestItemFunctionsInverse::getRightAnswer() const -> std::string { return rules.at(selectedIndex).second; }
 

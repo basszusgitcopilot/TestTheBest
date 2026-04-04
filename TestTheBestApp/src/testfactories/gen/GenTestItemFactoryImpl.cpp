@@ -11,6 +11,7 @@
 #include "TestItemFunctionsInverse.h"
 #include "TestItemIntegralDefinite.h"
 #include "TestItemIntegralRules.h"
+#include "TestItemStereoRules.h"
 #include "TestItemStereoSphereSurfaceVolume.h"
 #include "TestItemStereoSphereVolume.h"
 #include "TestItemStochasticBernoulliExperiment.h"
@@ -51,6 +52,9 @@ auto TestItemFactoryImpl::createTestItem(const TestItemType TestItemType) -> std
     }
     case TestItemType::INTEGRAL_RULES: {
         return std::make_shared<MultipleChoiceTestItem<TestItemIntegralRules>>();
+    }
+    case TestItemType::STEREO_RULES: {
+        return std::make_shared<MultipleChoiceTestItem<TestItemStereoRules>>();
     }
     case TestItemType::STEREO_SPHERE_SURFACE_VOLUME: {
         return std::make_shared<MultipleChoiceTestItem<TestItemStereoSphereSurfaceVolume>>();

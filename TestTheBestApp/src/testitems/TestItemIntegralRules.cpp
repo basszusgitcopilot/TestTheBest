@@ -11,10 +11,10 @@ TestItemIntegralRules::TestItemIntegralRules() {
 
 auto TestItemIntegralRules::operator==(const TestItem &other) const -> bool {
     const TestItemIntegralRules &otherItem = dynamic_cast<const TestItemIntegralRules &>(other);
-    return getRightAnswer() == otherItem.getRightAnswer();
+    return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 
-auto TestItemIntegralRules::getQuestion() -> std::string { return "Was ist die Stammfunktion von " + rules.at(ruleIndex).first + " ?\n"; }
+auto TestItemIntegralRules::getQuestion() const -> std::string { return "Was ist die Stammfunktion von " + rules.at(ruleIndex).first + " ?\n"; }
 
 auto TestItemIntegralRules::getRightAnswer() const -> std::string { return rules.at(ruleIndex).second; }
 

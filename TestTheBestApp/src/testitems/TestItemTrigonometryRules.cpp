@@ -11,10 +11,12 @@ TestItemTrigonometryRules::TestItemTrigonometryRules() {
 
 auto TestItemTrigonometryRules::operator==(const TestItem &other) const -> bool {
     const TestItemTrigonometryRules &otherItem = dynamic_cast<const TestItemTrigonometryRules &>(other);
-    return getRightAnswer() == otherItem.getRightAnswer();
+    return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 
-auto TestItemTrigonometryRules::getQuestion() -> std::string { return "Wie kann man die Gleichung fortsetzen? " + rules.at(selectedIndex).first + " = ... \n"; }
+auto TestItemTrigonometryRules::getQuestion() const -> std::string {
+    return "Wie kann man die Gleichung fortsetzen? " + rules.at(selectedIndex).first + " = ... \n";
+}
 
 auto TestItemTrigonometryRules::getRightAnswer() const -> std::string { return rules.at(selectedIndex).second; }
 

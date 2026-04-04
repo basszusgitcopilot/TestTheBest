@@ -1,7 +1,6 @@
 #include "TestItemStochasticBernoulliExperiment.h"
 #include "MathUtils.h"
 #include "StringUtils.h"
-#include <iostream>
 
 namespace com::prog::testthebest {
 
@@ -24,10 +23,10 @@ TestItemStochasticBernoulliExperiment::TestItemStochasticBernoulliExperiment() {
 
 auto TestItemStochasticBernoulliExperiment::operator==(const TestItem &other) const -> bool {
     const TestItemStochasticBernoulliExperiment &otherItem = dynamic_cast<const TestItemStochasticBernoulliExperiment &>(other);
-    return getRightAnswer() == otherItem.getRightAnswer();
+    return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 
-auto TestItemStochasticBernoulliExperiment::getQuestion() -> std::string {
+auto TestItemStochasticBernoulliExperiment::getQuestion() const -> std::string {
     auto question = possibleQuestions.at(questionIndex);
     question = replace(question, placeholderNumOfA, std::to_string(numOfA));
     question = replace(question, placeholderNumOfB, std::to_string(numOfB));

@@ -14,10 +14,10 @@ TestItemStochasticCombination::TestItemStochasticCombination() {
 
 auto TestItemStochasticCombination::operator==(const TestItem &other) const -> bool {
     const TestItemStochasticCombination &otherItem = dynamic_cast<const TestItemStochasticCombination &>(other);
-    return getRightAnswer() == otherItem.getRightAnswer();
+    return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 
-auto TestItemStochasticCombination::getQuestion() -> std::string {
+auto TestItemStochasticCombination::getQuestion() const -> std::string {
     return "Beim HyperSuperJackpot werden aus " + std::to_string(n) + " nummerierten Kugeln " + std::to_string(k) +
            " gezogen. Wie viele mögliche Kombinationen gibt es, wenn die Reihenfolge keine Rolle spielt?";
 }

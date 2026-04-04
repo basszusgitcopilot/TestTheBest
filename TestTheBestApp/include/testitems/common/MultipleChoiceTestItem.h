@@ -25,12 +25,14 @@ template <class T> class MultipleChoiceTestItem : public TestItem {
         rightSelection = createRandomNumber<uint8_t>(1, testItemList.size());
     };
 
+    auto getSelectedItemQuestion() const -> std::string { return testItemList.at(rightSelection - 1)->getQuestion(); }
+
     auto operator==(const TestItem &other) const -> bool {
         const MultipleChoiceTestItem<T> &otherItem = dynamic_cast<const MultipleChoiceTestItem<T> &>(other);
-        return getRightAnswer() == otherItem.getRightAnswer();
+        return getSelectedItemQuestion() == otherItem.getSelectedItemQuestion();
     };
 
-    auto getQuestion() -> std::string {
+    auto getQuestion() const -> std::string {
         std::string question = testItemList.at(rightSelection - 1)->getQuestion() + "\n";
         for (uint8_t i = 1; i <= testItemList.size(); ++i) {
             question += std::to_string(i) + ". " + testItemList.at(i - 1)->getRightAnswer() + "\n";
@@ -47,7 +49,7 @@ template <class T> class MultipleChoiceTestItem : public TestItem {
     };
 
   private:
-    static constexpr uint8_t numOfChoices = 4;
+    static constexpr uint32_t numOfChoices = 4;
     std::vector<std::shared_ptr<T>> testItemList;
     uint8_t rightSelection = 1;
 };
