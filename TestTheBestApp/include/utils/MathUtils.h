@@ -14,7 +14,7 @@ template <class T> auto createRandomNumber(T min, T max) -> T {
     return uniformDist(randomEngine);
 }
 
-template <class T> auto numberToString(T number, uint8_t precision) -> std::string {
+template <class T> auto numberToString(T number, uint8_t precision = 0) -> std::string {
     std::stringstream stream;
     stream << std::fixed << std::setprecision(precision) << number;
     return stream.str();

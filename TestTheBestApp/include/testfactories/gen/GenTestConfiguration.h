@@ -8,6 +8,7 @@ struct TestConfiguration {
     uint8_t numOfAlgebraLinearFactorization3 = 0;
     uint8_t numOfAlgebraLogarithmRules = 0;
     uint8_t numOfAlgebraQuadraticEquation = 0;
+    uint8_t numOfAnalyticGeometry2DLineLineIntersection = 0;
     uint8_t numOfArithmeticAddition = 0;
     uint8_t numOfArithmeticSubstraction = 0;
     uint8_t numOfDifferentialRules = 0;

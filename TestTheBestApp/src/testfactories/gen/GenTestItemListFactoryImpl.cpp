@@ -14,6 +14,9 @@ auto TestItemListFactoryImpl::getNumOfItems(const TestConfiguration &config, Tes
     case TestItemType::ALGEBRA_QUADRATIC_EQUATION: {
         return config.numOfAlgebraQuadraticEquation;
     }
+    case TestItemType::ANALYTIC_GEOMETRY_2_D_LINE_LINE_INTERSECTION: {
+        return config.numOfAnalyticGeometry2DLineLineIntersection;
+    }
     case TestItemType::ARITHMETIC_ADDITION: {
         return config.numOfArithmeticAddition;
     }

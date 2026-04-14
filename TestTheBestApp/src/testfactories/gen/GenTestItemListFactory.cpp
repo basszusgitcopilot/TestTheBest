@@ -18,6 +18,10 @@ auto TestItemListFactory::fillConfigurationValue(TestConfiguration &configuratio
         configuration.numOfAlgebraQuadraticEquation = propertyValue;
         return;
     }
+    if (propertyName == "numOfAnalyticGeometry2DLineLineIntersection") {
+        configuration.numOfAnalyticGeometry2DLineLineIntersection = propertyValue;
+        return;
+    }
     if (propertyName == "numOfArithmeticAddition") {
         configuration.numOfArithmeticAddition = propertyValue;
         return;

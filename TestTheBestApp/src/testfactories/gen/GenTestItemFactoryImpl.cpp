@@ -5,6 +5,7 @@
 #include "TestItemAlgebraLinearFactorization3.h"
 #include "TestItemAlgebraLogarithmRules.h"
 #include "TestItemAlgebraQuadraticEquation.h"
+#include "TestItemAnalyticGeometry2DLineLineIntersection.h"
 #include "TestItemArithmeticAddition.h"
 #include "TestItemArithmeticSubstraction.h"
 #include "TestItemDifferentialRules.h"
@@ -35,6 +36,9 @@ auto TestItemFactoryImpl::createTestItem(const TestItemType TestItemType) -> std
     }
     case TestItemType::ALGEBRA_QUADRATIC_EQUATION: {
         return std::make_shared<MultipleChoiceTestItem<TestItemAlgebraQuadraticEquation>>();
+    }
+    case TestItemType::ANALYTIC_GEOMETRY_2_D_LINE_LINE_INTERSECTION: {
+        return std::make_shared<MultipleChoiceTestItem<TestItemAnalyticGeometry2DLineLineIntersection>>();
     }
     case TestItemType::ARITHMETIC_ADDITION: {
         return std::make_shared<MultipleChoiceTestItem<TestItemArithmeticAddition>>();
