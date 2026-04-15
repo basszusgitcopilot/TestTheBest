@@ -17,6 +17,9 @@ auto TestItemListFactoryImpl::getNumOfItems(const TestConfiguration &config, Tes
     case TestItemType::ANALYTIC_GEOMETRY_2_D_LINE_LINE_INTERSECTION: {
         return config.numOfAnalyticGeometry2DLineLineIntersection;
     }
+    case TestItemType::ANALYTIC_GEOMETRY_LINE_PLANE_INTERSECTION: {
+        return config.numOfAnalyticGeometryLinePlaneIntersection;
+    }
     case TestItemType::ARITHMETIC_ADDITION: {
         return config.numOfArithmeticAddition;
     }

@@ -22,6 +22,10 @@ auto TestItemListFactory::fillConfigurationValue(TestConfiguration &configuratio
         configuration.numOfAnalyticGeometry2DLineLineIntersection = propertyValue;
         return;
     }
+    if (propertyName == "numOfAnalyticGeometryLinePlaneIntersection") {
+        configuration.numOfAnalyticGeometryLinePlaneIntersection = propertyValue;
+        return;
+    }
     if (propertyName == "numOfArithmeticAddition") {
         configuration.numOfArithmeticAddition = propertyValue;
         return;

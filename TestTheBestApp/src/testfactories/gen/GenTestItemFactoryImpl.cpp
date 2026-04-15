@@ -6,6 +6,7 @@
 #include "TestItemAlgebraLogarithmRules.h"
 #include "TestItemAlgebraQuadraticEquation.h"
 #include "TestItemAnalyticGeometry2DLineLineIntersection.h"
+#include "TestItemAnalyticGeometryLinePlaneIntersection.h"
 #include "TestItemArithmeticAddition.h"
 #include "TestItemArithmeticSubstraction.h"
 #include "TestItemDifferentialRules.h"
@@ -39,6 +40,9 @@ auto TestItemFactoryImpl::createTestItem(const TestItemType TestItemType) -> std
     }
     case TestItemType::ANALYTIC_GEOMETRY_2_D_LINE_LINE_INTERSECTION: {
         return std::make_shared<MultipleChoiceTestItem<TestItemAnalyticGeometry2DLineLineIntersection>>();
+    }
+    case TestItemType::ANALYTIC_GEOMETRY_LINE_PLANE_INTERSECTION: {
+        return std::make_shared<MultipleChoiceTestItem<TestItemAnalyticGeometryLinePlaneIntersection>>();
     }
     case TestItemType::ARITHMETIC_ADDITION: {
         return std::make_shared<MultipleChoiceTestItem<TestItemArithmeticAddition>>();
