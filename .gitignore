@@ -33,4 +33,5 @@
 
 
 _build/*
+_buildCodeGen/*
 .vscode/*

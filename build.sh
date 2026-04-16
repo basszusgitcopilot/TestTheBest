@@ -1,15 +1,20 @@
 ./prepare.sh
 
-cmake -S . -B _build
-cmake --build _build --target codeGen -j
+cmake -S TestTheBestCodeGen -B _buildCodeGen
+cmake --build _buildCodeGen --target codeGen -j
 
 if [ $? -ne 0 ]; then
     exit 1
 fi
 
-_build/TestTheBestApp/codeGen .
+_buildCodeGen/codeGen .
 
 cmake -S . -B _build
+cmake --build _build --target testTheBestLib -j
+if [ $? -ne 0 ]; then
+    exit 1
+fi
+
 cmake --build _build --target testTheBestApp -j
 if [ $? -ne 0 ]; then
     exit 1

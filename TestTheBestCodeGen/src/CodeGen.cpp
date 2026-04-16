@@ -194,14 +194,16 @@ int main(int argc, char **args) {
     }
 
     std::string rootPath(args[1]);
-    std::string testItemsPath(rootPath + "/TestTheBestApp/include/testitems/");
+    std::cout << "Root path: " << std::filesystem::absolute(rootPath) << std::endl;
+    std::string testItemsPath(rootPath + "/TestTheBestLib/include/testitems/");
+    std::cout << "testItemsPath: " << std::filesystem::absolute(testItemsPath) << std::endl;
     auto itemNames = getTestItemNames(testItemsPath);
     generateProperties(rootPath + "/TestTheBest.properties", itemNames);
-    generateGenTestConfigurationH(rootPath + "/TestTheBestApp/include/testfactories/gen/GenTestConfiguration.h", itemNames);
-    generateGenTestItemTypeH(rootPath + "/TestTheBestApp/include/testfactories/gen/GenTestItemType.h", itemNames);
-    generateGenTestItemFactoryImplCpp(rootPath + "/TestTheBestApp/src/testfactories/gen/GenTestItemFactoryImpl.cpp", itemNames);
-    generateGenTestItemListFactoryCpp(rootPath + "/TestTheBestApp/src/testfactories/gen/GenTestItemListFactory.cpp", itemNames);
-    generateGenTestItemListFactoryImplCpp(rootPath + "/TestTheBestApp/src/testfactories/gen/GenTestItemListFactoryImpl.cpp", itemNames);
+    generateGenTestConfigurationH(rootPath + "/TestTheBestLib/include/testfactories/gen/GenTestConfiguration.h", itemNames);
+    generateGenTestItemTypeH(rootPath + "/TestTheBestLib/include/testfactories/gen/GenTestItemType.h", itemNames);
+    generateGenTestItemFactoryImplCpp(rootPath + "/TestTheBestLib/src/testfactories/gen/GenTestItemFactoryImpl.cpp", itemNames);
+    generateGenTestItemListFactoryCpp(rootPath + "/TestTheBestLib/src/testfactories/gen/GenTestItemListFactory.cpp", itemNames);
+    generateGenTestItemListFactoryImplCpp(rootPath + "/TestTheBestLib/src/testfactories/gen/GenTestItemListFactoryImpl.cpp", itemNames);
 
     std::cout << "CodeGen finished." << std::endl;
 }
