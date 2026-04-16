@@ -15,6 +15,21 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+cmake --build _build --target testTestTheBestLib -j
+if [ $? -ne 0 ]; then
+    exit 1
+fi
+
+export CALL_CTEST_PARAMS="-T Test -T Coverage -j --output-on-failure --stop-on-failure --progress"
+cd _build/TestTheBestTests
+ctest $CALL_CTEST_PARAMS
+if [ $? -ne 0 ]; then
+    cd ../..
+    exit 1
+fi
+
+cd ../..
+
 cmake --build _build --target testTheBestApp -j
 if [ $? -ne 0 ]; then
     exit 1

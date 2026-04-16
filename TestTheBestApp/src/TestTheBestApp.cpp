@@ -7,7 +7,7 @@ using namespace com::prog::knowledgetest;
 namespace com::prog::testthebest {
 class TestTheBestApp {
   public:
-    TestTheBestApp(){};
+    TestTheBestApp() {};
 
     static auto showQuestion(std::string question) -> void {
         std::cout << "-----------------------------------------------------------------------------" << std::endl;
