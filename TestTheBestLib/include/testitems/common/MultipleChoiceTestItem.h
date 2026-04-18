@@ -2,7 +2,7 @@
 
 #include "MathUtils.h"
 #include "TestItem.h"
-#include "TestItemFactory.h"
+#include <memory>
 
 namespace com::prog::testthebest {
 template <class T> class MultipleChoiceTestItem : public TestItem {
@@ -25,16 +25,16 @@ template <class T> class MultipleChoiceTestItem : public TestItem {
         rightSelection = createRandomNumber<uint8_t>(1, testItemList.size());
     };
 
-    auto getMaxNumOfQuestions() const -> uint16_t { return testItemList.at(rightSelection - 1)->getMaxNumOfQuestions(); };
+    [[nodiscard]] auto getMaxNumOfQuestions() const -> uint16_t override { return testItemList.at(rightSelection - 1)->getMaxNumOfQuestions(); };
 
-    auto getSelectedItemQuestion() const -> std::string { return testItemList.at(rightSelection - 1)->getQuestion(); }
+    [[nodiscard]] auto getSelectedItemQuestion() const -> std::string { return testItemList.at(rightSelection - 1)->getQuestion(); }
 
-    auto equals(const TestItem &other) const -> bool {
-        const MultipleChoiceTestItem<T> &otherItem = dynamic_cast<const MultipleChoiceTestItem<T> &>(other);
+    [[nodiscard]] auto equals(const TestItem &other) const -> bool override {
+        auto otherItem = dynamic_cast<const MultipleChoiceTestItem<T> &>(other);
         return getSelectedItemQuestion() == otherItem.getSelectedItemQuestion();
     };
 
-    auto getQuestion() const -> std::string {
+    [[nodiscard]] auto getQuestion() const -> std::string override {
         std::string question = testItemList.at(rightSelection - 1)->getQuestion() + "\n";
         for (uint8_t i = 1; i <= testItemList.size(); ++i) {
             question += std::to_string(i) + ". " + testItemList.at(i - 1)->getRightAnswer() + "\n";
@@ -42,12 +42,12 @@ template <class T> class MultipleChoiceTestItem : public TestItem {
         return question;
     };
 
-    auto getRightAnswer() const -> std::string { return std::to_string(rightSelection); };
+    auto getRightAnswer() const -> std::string override { return std::to_string(rightSelection); };
 
-    auto checkAnswer(const std::string &answer) -> CheckAnswerResult {
+    auto checkAnswer(const std::string &answer) -> CheckAnswerResult override {
         bool ok = (answer == std::to_string(rightSelection)) || (answer == std::to_string(rightSelection) + ".");
         std::string rightAnswer = std::to_string(rightSelection) + ". " + testItemList.at(rightSelection - 1)->getRightAnswer();
-        return {ok, rightAnswer};
+        return {.ok = ok, .rightAnswer = rightAnswer};
     };
 
   private:

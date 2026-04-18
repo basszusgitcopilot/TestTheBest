@@ -1,9 +1,10 @@
 #pragma once
 
 #include "GenTestConfiguration.h"
-#include "TestItem.h"
+#include "KnowledgeTestItem.h"
 #include <cstdint>
 #include <memory>
+#include <vector>
 
 using namespace com::prog::knowledgetest;
 

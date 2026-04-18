@@ -2,13 +2,12 @@
 
 #include "KnowledgeTestItem.h"
 #include <cstdint>
-#include <string>
 
 using namespace com::prog::knowledgetest;
 namespace com::prog::testthebest {
 class TestItem : public KnowledgeTestItem {
   public:
-    virtual auto equals(const TestItem &other) const -> bool = 0;
-    virtual auto getMaxNumOfQuestions() const -> uint16_t = 0;
+    [[nodiscard]] virtual auto equals(const TestItem &other) const -> bool = 0;
+    [[nodiscard]] virtual auto getMaxNumOfQuestions() const -> uint16_t = 0;
 };
 } // namespace com::prog::testthebest
