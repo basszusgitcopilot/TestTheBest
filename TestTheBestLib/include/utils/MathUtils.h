@@ -33,7 +33,8 @@ template <class T> auto numberToString(T number, uint8_t precision = 0) -> std::
 
 auto factorial(uint64_t a) -> uint64_t;
 auto bincoeff(uint64_t n, uint64_t k) -> uint64_t;
-auto vectorLength(double a1, double a2, double a3) -> double;
+auto vectorLength3D(Vector3D v1) -> double;
 auto dotProduct2D(Vector2D v1, Vector2D v2) -> double;
 auto dotProduct3D(Vector3D v1, Vector3D v2) -> double;
 auto crossProduct(Vector3D v1, Vector3D v2) -> Vector3D;
+auto angleBetweenVectors(Vector3D v1, Vector3D v2) -> double;

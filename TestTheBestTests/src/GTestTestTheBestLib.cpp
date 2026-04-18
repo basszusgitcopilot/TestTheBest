@@ -17,3 +17,10 @@ TEST(TestTheBestLib, testCrossProduct) {
     ASSERT_TRUE(checkCrossProduct({-1, 0, 2}, {3, 1, 1}, {-2, 7, -1}));
     ASSERT_TRUE(checkCrossProduct({-1, 4, 5}, {1, 1, 1}, {-1, 6, -5}));
 }
+
+TEST(TestTheBestLib, testDotProduct) {
+    ASSERT_EQ(dotProduct3D({1, 5, 0}, {3, 7, 0}), 38);
+    ASSERT_EQ(dotProduct3D({4, 0, 1}, {3, 6, 1}), 13);
+}
+
+TEST(TestTheBestLib, testAngleBetweenVectors) { ASSERT_EQ(numberToString(angleBetweenVectors({1, 5, 0}, {3, 7, 0}) * 180 / M_PI, 2), "11.89"); }

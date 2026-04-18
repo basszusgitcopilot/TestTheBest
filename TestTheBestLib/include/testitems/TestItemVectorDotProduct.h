@@ -1,5 +1,6 @@
 #pragma once
 
+#include "MathUtils.h"
 #include "TestItem.h"
 
 using namespace com::prog::knowledgetest;
@@ -16,11 +17,7 @@ class TestItemVectorDotProduct : public TestItem {
     auto getMaxNumOfQuestions() const -> uint16_t override;
 
   private:
-    int32_t a1 = 0;
-    int32_t a2 = 0;
-    int32_t a3 = 0;
-    int32_t b1 = 0;
-    int32_t b2 = 0;
-    int32_t b3 = 0;
+    Vector3D a;
+    Vector3D b;
 };
 } // namespace com::prog::testthebest
