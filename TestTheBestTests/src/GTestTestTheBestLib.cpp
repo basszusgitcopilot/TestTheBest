@@ -24,3 +24,10 @@ TEST(TestTheBestLib, testDotProduct) {
 }
 
 TEST(TestTheBestLib, testAngleBetweenVectors) { ASSERT_EQ(numberToString(angleBetweenVectors({1, 5, 0}, {3, 7, 0}) * 180 / M_PI, 2), "11.89"); }
+
+auto checkLineLineIntersection2D(Line2D l1, Line2D l2, Vector2D expected) -> bool {
+    auto lli = lineLineIntersection2D(l1, l2);
+    return expected.x == lli.x && expected.y == lli.y;
+}
+
+TEST(TestTheBestLib, testLineLineIntersection2D) { ASSERT_TRUE(checkLineLineIntersection2D({{1, 0}, {4, 6}}, {{0, 6}, {9, 0}}, {3, 4})); }

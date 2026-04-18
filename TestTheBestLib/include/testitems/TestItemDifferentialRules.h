@@ -12,7 +12,7 @@ namespace com::prog::testthebest {
 class TestItemDifferentialRules : public TestItem {
   public:
     TestItemDifferentialRules();
-    auto operator==(const TestItem &other) const -> bool override;
+    auto equals(const TestItem &other) const -> bool override;
     auto getQuestion() const -> std::string override;
     auto getRightAnswer() const -> std::string override;
     auto checkAnswer(const std::string &answer) -> CheckAnswerResult override;

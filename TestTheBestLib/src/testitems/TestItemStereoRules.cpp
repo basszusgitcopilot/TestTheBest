@@ -11,8 +11,8 @@ TestItemStereoRules::TestItemStereoRules() {
 
 auto TestItemStereoRules::getMaxNumOfQuestions() const -> uint16_t { return rules.size(); }
 
-auto TestItemStereoRules::operator==(const TestItem &other) const -> bool {
-    const TestItemStereoRules &otherItem = dynamic_cast<const TestItemStereoRules &>(other);
+auto TestItemStereoRules::equals(const TestItem &other) const -> bool {
+    auto otherItem = dynamic_cast<const TestItemStereoRules &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 

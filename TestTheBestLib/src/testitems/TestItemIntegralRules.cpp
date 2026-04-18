@@ -11,8 +11,8 @@ TestItemIntegralRules::TestItemIntegralRules() {
 
 auto TestItemIntegralRules::getMaxNumOfQuestions() const -> uint16_t { return std::numeric_limits<uint16_t>::max(); }
 
-auto TestItemIntegralRules::operator==(const TestItem &other) const -> bool {
-    const TestItemIntegralRules &otherItem = dynamic_cast<const TestItemIntegralRules &>(other);
+auto TestItemIntegralRules::equals(const TestItem &other) const -> bool {
+    auto otherItem = dynamic_cast<const TestItemIntegralRules &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 

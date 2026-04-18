@@ -1,5 +1,11 @@
 #include "MathUtils.h"
 
+auto Vector2D::operator-(const Vector2D &other) const -> Vector2D { return {x - other.x, y - other.y}; }
+
+auto Vector3D::operator-(const Vector3D &other) const -> Vector3D { return {x - other.x, y - other.y, z - other.z}; }
+
+Line2D::Line2D(Vector2D _a, Vector2D _b) : a{_a}, b{_b} {};
+
 auto factorial(uint64_t a) -> uint64_t {
     uint64_t result = 1;
     for (; a >= 2; a--) {
@@ -15,10 +21,10 @@ auto bincoeff(uint64_t n, uint64_t k) -> uint64_t {
 
     uint64_t res = 1;
 
-    for (int i = n; i > n - k; --i) {
+    for (uint64_t i = n; i > n - k; --i) {
         res *= i;
     }
-    for (int i = k; i > 1; --i) {
+    for (uint64_t i = k; i > 1; --i) {
         res /= i;
     }
     return res;
@@ -35,3 +41,11 @@ auto crossProduct(Vector3D v1, Vector3D v2) -> Vector3D {
 }
 
 auto angleBetweenVectors(Vector3D v1, Vector3D v2) -> double { return std::acos(dotProduct3D(v1, v2) / vectorLength3D(v1) / vectorLength3D(v2)); }
+auto lineLineIntersection2D(Line2D l1, Line2D l2) -> Vector2D {
+    auto m = l1.b - l1.a;
+    auto n = l2.b - l2.a;
+    double i = (l2.a.y - l2.a.x * n.y / n.x - l1.a.y + l1.a.x * n.y / n.x) / (m.y - m.x * n.y / n.x);
+    double s1 = l1.a.x + i * m.x;
+    double s2 = l1.a.y + i * m.y;
+    return Vector2D{s1, s2};
+}

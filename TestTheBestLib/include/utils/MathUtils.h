@@ -9,12 +9,21 @@
 struct Vector2D {
     double x = 0;
     double y = 0;
+    auto operator-(const Vector2D &other) const -> Vector2D;
 };
 
 struct Vector3D {
     double x = 0;
     double y = 0;
     double z = 0;
+    auto operator-(const Vector3D &other) const -> Vector3D;
+};
+
+struct Line2D {
+    Line2D() = default;
+    Line2D(Vector2D _a, Vector2D _b);
+    Vector2D a;
+    Vector2D b;
 };
 
 template <class T> auto createRandomNumber(T min, T max) -> T {
@@ -38,3 +47,4 @@ auto dotProduct2D(Vector2D v1, Vector2D v2) -> double;
 auto dotProduct3D(Vector3D v1, Vector3D v2) -> double;
 auto crossProduct(Vector3D v1, Vector3D v2) -> Vector3D;
 auto angleBetweenVectors(Vector3D v1, Vector3D v2) -> double;
+auto lineLineIntersection2D(Line2D l1, Line2D l2) -> Vector2D;

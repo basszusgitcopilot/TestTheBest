@@ -14,11 +14,11 @@ auto TestItemListFactory::readConfigurationFromFile(std::string fileName) -> Tes
     std::string line;
     while (std::getline(propertiesFile, line)) {
 
-        if (line.empty() || line.find('#') != line.npos) {
+        if (line.empty() || line.find('#') != std::string::npos) {
             continue;
         }
         auto pos = line.find('=');
-        if (pos == line.npos) {
+        if (pos == std::string::npos) {
             continue;
         }
         if (pos == 0) {
@@ -32,7 +32,7 @@ auto TestItemListFactory::readConfigurationFromFile(std::string fileName) -> Tes
         try {
             uint8_t propValueInt = std::stoi(propValueStr);
             fillConfigurationValue(configuration, propName, propValueInt);
-        } catch (std::exception e) {
+        } catch (std::exception const &e) {
             std::cerr << "ERROR: cannot parse value: " << line << std::endl;
             continue;
         }

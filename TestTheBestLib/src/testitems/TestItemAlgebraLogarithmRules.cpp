@@ -11,8 +11,8 @@ TestItemAlgebraLogarithmRules::TestItemAlgebraLogarithmRules() {
 
 auto TestItemAlgebraLogarithmRules::getMaxNumOfQuestions() const -> uint16_t { return rules.size(); }
 
-auto TestItemAlgebraLogarithmRules::operator==(const TestItem &other) const -> bool {
-    const TestItemAlgebraLogarithmRules &otherItem = dynamic_cast<const TestItemAlgebraLogarithmRules &>(other);
+auto TestItemAlgebraLogarithmRules::equals(const TestItem &other) const -> bool {
+    auto otherItem = dynamic_cast<const TestItemAlgebraLogarithmRules &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 

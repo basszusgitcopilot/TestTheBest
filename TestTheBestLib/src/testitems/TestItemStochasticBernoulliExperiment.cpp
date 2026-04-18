@@ -5,7 +5,6 @@
 namespace com::prog::testthebest {
 
 TestItemStochasticBernoulliExperiment::TestItemStochasticBernoulliExperiment() {
-    constexpr uint32_t nmin = 11;
     constexpr uint32_t nmax = 20;
     constexpr uint32_t kmin = 2;
     constexpr uint32_t kmax = 6;
@@ -23,8 +22,8 @@ TestItemStochasticBernoulliExperiment::TestItemStochasticBernoulliExperiment() {
 
 auto TestItemStochasticBernoulliExperiment::getMaxNumOfQuestions() const -> uint16_t { return std::numeric_limits<uint16_t>::max(); }
 
-auto TestItemStochasticBernoulliExperiment::operator==(const TestItem &other) const -> bool {
-    const TestItemStochasticBernoulliExperiment &otherItem = dynamic_cast<const TestItemStochasticBernoulliExperiment &>(other);
+auto TestItemStochasticBernoulliExperiment::equals(const TestItem &other) const -> bool {
+    auto otherItem = dynamic_cast<const TestItemStochasticBernoulliExperiment &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 

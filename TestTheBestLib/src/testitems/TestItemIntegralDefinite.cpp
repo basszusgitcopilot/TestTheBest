@@ -16,8 +16,8 @@ TestItemIntegralDefinite::TestItemIntegralDefinite() {
 
 auto TestItemIntegralDefinite::getMaxNumOfQuestions() const -> uint16_t { return std::numeric_limits<uint16_t>::max(); }
 
-auto TestItemIntegralDefinite::operator==(const TestItem &other) const -> bool {
-    const TestItemIntegralDefinite &otherItem = dynamic_cast<const TestItemIntegralDefinite &>(other);
+auto TestItemIntegralDefinite::equals(const TestItem &other) const -> bool {
+    auto otherItem = dynamic_cast<const TestItemIntegralDefinite &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 

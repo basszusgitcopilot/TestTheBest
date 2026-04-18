@@ -13,8 +13,8 @@ TestItemAlgebraQuadraticEquation::TestItemAlgebraQuadraticEquation() {
 
 auto TestItemAlgebraQuadraticEquation::getMaxNumOfQuestions() const -> uint16_t { return std::numeric_limits<uint16_t>::max(); }
 
-auto TestItemAlgebraQuadraticEquation::operator==(const TestItem &other) const -> bool {
-    const TestItemAlgebraQuadraticEquation &otherItem = dynamic_cast<const TestItemAlgebraQuadraticEquation &>(other);
+auto TestItemAlgebraQuadraticEquation::equals(const TestItem &other) const -> bool {
+    auto otherItem = dynamic_cast<const TestItemAlgebraQuadraticEquation &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 
@@ -26,13 +26,13 @@ auto TestItemAlgebraQuadraticEquation::getRightAnswer() const -> std::string {
     double discriminant = std::pow(b, 2) - 4 * a * c;
     if (discriminant < 0) {
         return "keine reelle Lösung";
-    } else if (discriminant == 0) {
-        return numberToString(-b / (2 * a), 2);
-    } else {
-        double x1 = (-b + std::sqrt(discriminant)) / (2 * a);
-        double x2 = (-b - std::sqrt(discriminant)) / (2 * a);
-        return std::string("x1 = ") + numberToString(x1, 2) + "; x2 = " + numberToString(x2, 2);
     }
+    if (discriminant == 0) {
+        return numberToString(-b / (2 * a), 2);
+    }
+    double x1 = (-b + std::sqrt(discriminant)) / (2 * a);
+    double x2 = (-b - std::sqrt(discriminant)) / (2 * a);
+    return std::string("x1 = ") + numberToString(x1, 2) + "; x2 = " + numberToString(x2, 2);
 }
 
 auto TestItemAlgebraQuadraticEquation::checkAnswer(const std::string &answer) -> CheckAnswerResult {

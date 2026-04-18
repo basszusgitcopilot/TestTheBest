@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.28)
 
 project(testTheBest)
 
+set(CMAKE_CXX_STANDARD 20)
+
 include(GoogleTest)
 include(FetchContent)
 FetchContent_Declare(
@@ -13,6 +15,20 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 include(CTest)
+
+find_program(CLANG_TIDY_EXE NAMES "clang-tidy")
+
+set(CMAKE_CXX_CLANG_TIDY
+    clang-tidy
+    -warnings-as-errors=*
+)
+
+add_compile_options(
+  -Wall
+  -Wextra
+  -Wpedantic
+  -Werror
+)
 
 add_subdirectory(KnowledgeTest)
 add_subdirectory(TestTheBestLib)

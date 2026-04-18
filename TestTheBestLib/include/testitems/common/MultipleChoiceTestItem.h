@@ -9,10 +9,10 @@ template <class T> class MultipleChoiceTestItem : public TestItem {
   public:
     MultipleChoiceTestItem() {
         while (testItemList.size() < numOfChoices) {
-            auto item = std::make_shared<T>();
+            auto const item = std::make_shared<T>();
             bool found = false;
             for (auto const &it : testItemList) {
-                if (*it == *item) {
+                if (it->equals(*item)) {
                     found = true;
                     break;
                 }
@@ -29,7 +29,7 @@ template <class T> class MultipleChoiceTestItem : public TestItem {
 
     auto getSelectedItemQuestion() const -> std::string { return testItemList.at(rightSelection - 1)->getQuestion(); }
 
-    auto operator==(const TestItem &other) const -> bool {
+    auto equals(const TestItem &other) const -> bool {
         const MultipleChoiceTestItem<T> &otherItem = dynamic_cast<const MultipleChoiceTestItem<T> &>(other);
         return getSelectedItemQuestion() == otherItem.getSelectedItemQuestion();
     };

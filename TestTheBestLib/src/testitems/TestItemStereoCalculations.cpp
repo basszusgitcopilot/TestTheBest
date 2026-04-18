@@ -11,8 +11,8 @@ TestItemStereoCalculations::TestItemStereoCalculations() {
 
 auto TestItemStereoCalculations::getMaxNumOfQuestions() const -> uint16_t { return std::numeric_limits<uint16_t>::max(); }
 
-auto TestItemStereoCalculations::operator==(const TestItem &other) const -> bool {
-    const TestItemStereoCalculations &otherItem = dynamic_cast<const TestItemStereoCalculations &>(other);
+auto TestItemStereoCalculations::equals(const TestItem &other) const -> bool {
+    auto otherItem = dynamic_cast<const TestItemStereoCalculations &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 
@@ -26,8 +26,8 @@ auto TestItemStereoCalculations::getRightAnswer() const -> std::string {
     double volumeSphere = 4.0 / 3.0 * M_PI * radiusSphere * radiusSphere * radiusSphere;
     double edgeCube = std::sqrt(surfaceArea / 6);
     double volumeCube = edgeCube * edgeCube * edgeCube;
-    double edgeTetraeder = std::sqrt(surfaceArea / std::sqrt(3));
-    double volumeTetraeder = std::sqrt(2) / 12 * edgeTetraeder * edgeTetraeder * edgeTetraeder;
+    double edgeTetraeder = std::sqrt(surfaceArea / std::numbers::sqrt3);
+    double volumeTetraeder = std::numbers::sqrt2 / 12 * edgeTetraeder * edgeTetraeder * edgeTetraeder;
     return numberToString(volumeSphere + volumeCube + volumeTetraeder, 2);
 }
 auto TestItemStereoCalculations::checkAnswer(const std::string &answer) -> CheckAnswerResult {

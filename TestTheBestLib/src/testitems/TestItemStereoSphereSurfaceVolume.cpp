@@ -11,8 +11,8 @@ TestItemStereoSphereSurfaceVolume::TestItemStereoSphereSurfaceVolume() {
 
 auto TestItemStereoSphereSurfaceVolume::getMaxNumOfQuestions() const -> uint16_t { return std::numeric_limits<uint16_t>::max(); }
 
-auto TestItemStereoSphereSurfaceVolume::operator==(const TestItem &other) const -> bool {
-    const TestItemStereoSphereSurfaceVolume &otherItem = dynamic_cast<const TestItemStereoSphereSurfaceVolume &>(other);
+auto TestItemStereoSphereSurfaceVolume::equals(const TestItem &other) const -> bool {
+    auto otherItem = dynamic_cast<const TestItemStereoSphereSurfaceVolume &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 

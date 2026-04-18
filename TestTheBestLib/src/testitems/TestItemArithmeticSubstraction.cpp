@@ -12,8 +12,8 @@ TestItemArithmeticSubstraction::TestItemArithmeticSubstraction() {
 
 auto TestItemArithmeticSubstraction::getMaxNumOfQuestions() const -> uint16_t { return std::numeric_limits<uint16_t>::max(); }
 
-auto TestItemArithmeticSubstraction::operator==(const TestItem &other) const -> bool {
-    const TestItemArithmeticSubstraction &otherItem = dynamic_cast<const TestItemArithmeticSubstraction &>(other);
+auto TestItemArithmeticSubstraction::equals(const TestItem &other) const -> bool {
+    auto otherItem = dynamic_cast<const TestItemArithmeticSubstraction &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 

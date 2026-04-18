@@ -11,8 +11,8 @@ TestItemDifferentialRules::TestItemDifferentialRules() {
 
 auto TestItemDifferentialRules::getMaxNumOfQuestions() const -> uint16_t { return rules.size(); }
 
-auto TestItemDifferentialRules::operator==(const TestItem &other) const -> bool {
-    const TestItemDifferentialRules &otherItem = dynamic_cast<const TestItemDifferentialRules &>(other);
+auto TestItemDifferentialRules::equals(const TestItem &other) const -> bool {
+    auto otherItem = dynamic_cast<const TestItemDifferentialRules &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 

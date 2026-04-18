@@ -12,8 +12,8 @@ TestItemAlgebraLinearFactorization::TestItemAlgebraLinearFactorization() {
 
 auto TestItemAlgebraLinearFactorization::getMaxNumOfQuestions() const -> uint16_t { return std::numeric_limits<uint16_t>::max(); }
 
-auto TestItemAlgebraLinearFactorization::operator==(const TestItem &other) const -> bool {
-    const TestItemAlgebraLinearFactorization &otherItem = dynamic_cast<const TestItemAlgebraLinearFactorization &>(other);
+auto TestItemAlgebraLinearFactorization::equals(const TestItem &other) const -> bool {
+    auto otherItem = dynamic_cast<const TestItemAlgebraLinearFactorization &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 

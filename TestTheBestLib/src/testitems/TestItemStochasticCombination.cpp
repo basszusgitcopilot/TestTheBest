@@ -14,8 +14,8 @@ TestItemStochasticCombination::TestItemStochasticCombination() {
 
 auto TestItemStochasticCombination::getMaxNumOfQuestions() const -> uint16_t { return std::numeric_limits<uint16_t>::max(); }
 
-auto TestItemStochasticCombination::operator==(const TestItem &other) const -> bool {
-    const TestItemStochasticCombination &otherItem = dynamic_cast<const TestItemStochasticCombination &>(other);
+auto TestItemStochasticCombination::equals(const TestItem &other) const -> bool {
+    auto otherItem = dynamic_cast<const TestItemStochasticCombination &>(other);
     return getRightAnswer() == otherItem.getRightAnswer() || getQuestion() == otherItem.getQuestion();
 };
 
