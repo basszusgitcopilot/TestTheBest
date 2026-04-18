@@ -1,7 +1,7 @@
 ./prepare.sh
 
 if [ "$TEST_THE_BEST_BUILD_USE_CODEGEN" == "true" ]; then
-    cmake -S TestTheBestCodeGen -B _buildCodeGen
+    cmake -G Ninja -S TestTheBestCodeGen -B _buildCodeGen
     cmake --build _buildCodeGen --target codeGen -j
 
     if [ $? -ne 0 ]; then
@@ -11,7 +11,7 @@ if [ "$TEST_THE_BEST_BUILD_USE_CODEGEN" == "true" ]; then
     _buildCodeGen/codeGen .
 fi
 
-cmake -S . -B _build
+cmake -G Ninja -S . -B _build
 cmake --build _build --target testTheBestLib -j
 if [ $? -ne 0 ]; then
     exit 1

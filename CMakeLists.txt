@@ -30,6 +30,8 @@ add_compile_options(
   -Werror
 )
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 add_subdirectory(KnowledgeTest)
 add_subdirectory(TestTheBestLib)
 add_subdirectory(TestTheBestTests)
