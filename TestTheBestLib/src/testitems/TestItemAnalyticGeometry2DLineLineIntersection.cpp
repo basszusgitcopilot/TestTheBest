@@ -15,7 +15,7 @@ TestItemAnalyticGeometry2DLineLineIntersection::TestItemAnalyticGeometry2DLineLi
         l2.a.y = createRandomNumber(min, max);
         l2.b.x = createRandomNumber(min, max);
         l2.b.y = createRandomNumber(min, max);
-    } while ((l1.a.x == l1.b.x && l1.a.y == l1.b.y) || (l2.a.x == l2.b.x && l2.a.y == l2.b.y));
+    } while ((l1.a == l1.b) || (l2.a == l2.b));
 }
 
 auto TestItemAnalyticGeometry2DLineLineIntersection::getMaxNumOfQuestions() const -> uint16_t { return std::numeric_limits<uint16_t>::max(); }

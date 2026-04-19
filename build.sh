@@ -36,6 +36,6 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-#cp TestTheBest.properties _build/TestTheBestApp
+cp TestTheBest.properties _build/TestTheBestApp
 echo 10987654321
 

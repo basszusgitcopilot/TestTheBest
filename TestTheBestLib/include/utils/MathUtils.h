@@ -18,6 +18,7 @@ struct Vector3D {
     double y = 0;
     double z = 0;
     auto operator-(const Vector3D &other) const -> Vector3D;
+    auto operator==(const Vector3D &other) const -> bool;
 };
 
 struct Line2D {
@@ -69,3 +70,4 @@ auto areVectorsParallel2D(Vector2D v1, Vector2D v2) -> bool;
 auto areLinesParallel2D(Line2D l1, Line2D l2) -> bool;
 auto isCoordinateOnLine2D(Vector2D a, Line2D l) -> bool;
 auto areTheSameLines(Line2D l1, Line2D l2) -> bool;
+auto isCoordinateOnPlane(Vector3D a, Plane p) -> bool;

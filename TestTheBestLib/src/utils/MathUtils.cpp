@@ -4,6 +4,7 @@ auto Vector2D::operator-(const Vector2D &other) const -> Vector2D { return {x - 
 auto Vector2D::operator==(const Vector2D &other) const -> bool { return x == other.x && y == other.y; };
 
 auto Vector3D::operator-(const Vector3D &other) const -> Vector3D { return {x - other.x, y - other.y, z - other.z}; }
+auto Vector3D::operator==(const Vector3D &other) const -> bool { return x == other.x && y == other.y && z == other.z; };
 
 Line2D::Line2D(Vector2D _a, Vector2D _b) : a{_a}, b{_b} {};
 
@@ -82,3 +83,7 @@ auto areLinesParallel2D(Line2D l1, Line2D l2) -> bool { return areVectorsParalle
 auto isCoordinateOnLine2D(Vector2D a, Line2D l) -> bool { return a == l.a || a == l.b || areVectorsParallel2D(l.a - a, l.b - a); }
 
 auto areTheSameLines(Line2D l1, Line2D l2) -> bool { return areLinesParallel2D(l1, l2) && isCoordinateOnLine2D(l1.a, l2); }
+
+auto isCoordinateOnPlane(Vector3D a, Plane p) -> bool {
+    return a == p.a || a == p.b || a == p.c || dotProduct3D(crossProduct(p.b - p.a, p.c - p.a), p.a - a) == 0;
+}

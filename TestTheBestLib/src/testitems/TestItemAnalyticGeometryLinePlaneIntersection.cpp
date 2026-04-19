@@ -6,21 +6,23 @@ namespace com::prog::testthebest {
 TestItemAnalyticGeometryLinePlaneIntersection::TestItemAnalyticGeometryLinePlaneIntersection() {
     constexpr int32_t min = -10;
     constexpr int32_t max = 10;
-    p.a.x = createRandomNumber(min, max);
-    p.a.y = createRandomNumber(min, max);
-    p.a.z = createRandomNumber(min, max);
-    p.b.x = createRandomNumber(min, max);
-    p.b.y = createRandomNumber(min, max);
-    p.b.z = createRandomNumber(min, max);
-    p.c.x = createRandomNumber(min, max);
-    p.c.y = createRandomNumber(min, max);
-    p.c.z = createRandomNumber(min, max);
-    l.a.x = createRandomNumber(min, max);
-    l.a.y = createRandomNumber(min, max);
-    l.a.z = createRandomNumber(min, max);
-    l.b.x = createRandomNumber(min, max);
-    l.b.y = createRandomNumber(min, max);
-    l.b.z = createRandomNumber(min, max);
+    do {
+        p.a.x = createRandomNumber(min, max);
+        p.a.y = createRandomNumber(min, max);
+        p.a.z = createRandomNumber(min, max);
+        p.b.x = createRandomNumber(min, max);
+        p.b.y = createRandomNumber(min, max);
+        p.b.z = createRandomNumber(min, max);
+        p.c.x = createRandomNumber(min, max);
+        p.c.y = createRandomNumber(min, max);
+        p.c.z = createRandomNumber(min, max);
+        l.a.x = createRandomNumber(min, max);
+        l.a.y = createRandomNumber(min, max);
+        l.a.z = createRandomNumber(min, max);
+        l.b.x = createRandomNumber(min, max);
+        l.b.y = createRandomNumber(min, max);
+        l.b.z = createRandomNumber(min, max);
+    } while (p.a == p.b || p.a == p.c || p.b == p.c || l.a == l.b);
 }
 
 auto TestItemAnalyticGeometryLinePlaneIntersection::getMaxNumOfQuestions() const -> uint16_t { return std::numeric_limits<uint16_t>::max(); }
@@ -38,18 +40,15 @@ auto TestItemAnalyticGeometryLinePlaneIntersection::getQuestion() const -> std::
 }
 
 auto TestItemAnalyticGeometryLinePlaneIntersection::getRightAnswer() const -> std::string {
-    Vector3D pab = p.b - p.a;
-    Vector3D pac = p.c - p.a;
-    Vector3D n = crossProduct(pab, pac);
+    if (isCoordinateOnPlane(l.a, p) && isCoordinateOnPlane(l.b, p)) {
+        return "Die Linie befindet sich auf der Ebene.";
+    }
+    if (dotProduct3D(l.b - l.a, crossProduct(p.b - p.a, p.c - p.a)) == 0) {
+        return "Die Line verläuft parallel zu aber außerhalb der Ebene.";
+    }
 
-    Vector3D lab = l.b - l.a;
-
-    double t = (n.x * (p.a.x - l.a.x) + n.y * (p.a.y - l.a.y) + n.z * (p.a.z - l.a.z)) / (n.x * lab.x + n.y * lab.y + n.z * lab.z);
-    double s1 = l.a.x + lab.x * t;
-    double s2 = l.a.y + lab.y * t;
-    double s3 = l.a.z + lab.z * t;
-
-    return std::string("S(") + numberToString(s1, 2) + ";" + numberToString(s2, 2) + ";" + numberToString(s3, 2) + ")";
+    auto s = linePlaneIntersection(l, p);
+    return std::string("S(") + numberToString(s.x, 2) + ";" + numberToString(s.y, 2) + ";" + numberToString(s.z, 2) + ")";
 }
 
 auto TestItemAnalyticGeometryLinePlaneIntersection::checkAnswer(const std::string &answer) -> CheckAnswerResult {
