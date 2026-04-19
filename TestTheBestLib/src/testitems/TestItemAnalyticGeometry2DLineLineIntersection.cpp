@@ -32,6 +32,9 @@ auto TestItemAnalyticGeometry2DLineLineIntersection::getQuestion() const -> std:
 }
 
 auto TestItemAnalyticGeometry2DLineLineIntersection::getRightAnswer() const -> std::string {
+    if (areTheSameLines(l1, l2)) {
+        return "Die Linen stimmen überein.";
+    }
     if (areLinesParallel2D(l1, l2)) {
         return "Die Linen sind parallel.";
     }

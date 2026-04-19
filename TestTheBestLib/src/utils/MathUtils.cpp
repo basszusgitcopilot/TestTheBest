@@ -1,6 +1,7 @@
 #include "MathUtils.h"
 
 auto Vector2D::operator-(const Vector2D &other) const -> Vector2D { return {x - other.x, y - other.y}; }
+auto Vector2D::operator==(const Vector2D &other) const -> bool { return x == other.x && y == other.y; };
 
 auto Vector3D::operator-(const Vector3D &other) const -> Vector3D { return {x - other.x, y - other.y, z - other.z}; }
 
@@ -77,3 +78,7 @@ auto linePlaneIntersection(Line3D l, Plane p) -> Vector3D {
 auto areVectorsParallel2D(Vector2D v1, Vector2D v2) -> bool { return vectorLength3D(crossProduct({v1.x, v1.y, 0}, {v2.x, v2.y, 0})) == 0; }
 
 auto areLinesParallel2D(Line2D l1, Line2D l2) -> bool { return areVectorsParallel2D(l1.b - l1.a, l2.b - l2.a); }
+
+auto isCoordinateOnLine2D(Vector2D a, Line2D l) -> bool { return a == l.a || a == l.b || areVectorsParallel2D(l.a - a, l.b - a); }
+
+auto areTheSameLines(Line2D l1, Line2D l2) -> bool { return areLinesParallel2D(l1, l2) && isCoordinateOnLine2D(l1.a, l2); }

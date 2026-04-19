@@ -49,3 +49,7 @@ TEST(TestTheBestLib, testAreVectorsParallel2D) {
 }
 
 TEST(TestTheBestLib, testAreLinesParallel2D) { ASSERT_TRUE(areLinesParallel2D({{0, 0}, {1, 1}}, {{1, 0}, {2, 1}})); }
+
+TEST(TestTheBestLib, testIsCoordinateOnLine2D) { ASSERT_TRUE(isCoordinateOnLine2D({1, 1}, {{-1, -1}, {5, 5}})); }
+
+TEST(TestTheBestLib, testAreTheSameLines) { ASSERT_TRUE(areTheSameLines({{0, 0}, {1, 1}}, {{-1, -1}, {2, 2}})); }
