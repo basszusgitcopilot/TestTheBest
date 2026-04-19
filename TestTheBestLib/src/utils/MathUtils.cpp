@@ -6,6 +6,10 @@ auto Vector3D::operator-(const Vector3D &other) const -> Vector3D { return {x - 
 
 Line2D::Line2D(Vector2D _a, Vector2D _b) : a{_a}, b{_b} {};
 
+Line3D::Line3D(Vector3D _a, Vector3D _b) : a{_a}, b{_b} {};
+
+Plane::Plane(Vector3D _a, Vector3D _b, Vector3D _c) : a{_a}, b{_b}, c{_c} {};
+
 auto factorial(uint64_t a) -> uint64_t {
     uint64_t result = 1;
     for (; a >= 2; a--) {
@@ -48,4 +52,15 @@ auto lineLineIntersection2D(Line2D l1, Line2D l2) -> Vector2D {
     double s1 = l1.a.x + i * m.x;
     double s2 = l1.a.y + i * m.y;
     return Vector2D{s1, s2};
+}
+
+auto linePlaneIntersection(Line3D l, Plane p) -> Vector3D {
+    Vector3D pab = p.b - p.a;
+    Vector3D pac = p.c - p.a;
+    Vector3D n = crossProduct(pab, pac);
+
+    Vector3D lab = l.b - l.a;
+
+    double t = (n.x * (p.a.x - l.a.x) + n.y * (p.a.y - l.a.y) + n.z * (p.a.z - l.a.z)) / (n.x * lab.x + n.y * lab.y + n.z * lab.z);
+    return Vector3D{.x = l.a.x + lab.x * t, .y = l.a.y + lab.y * t, .z = l.a.z + lab.z * t};
 }

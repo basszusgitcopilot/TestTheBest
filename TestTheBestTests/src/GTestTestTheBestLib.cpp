@@ -31,3 +31,12 @@ auto checkLineLineIntersection2D(Line2D l1, Line2D l2, Vector2D expected) -> boo
 }
 
 TEST(TestTheBestLib, testLineLineIntersection2D) { ASSERT_TRUE(checkLineLineIntersection2D({{1, 0}, {4, 6}}, {{0, 6}, {9, 0}}, {3, 4})); }
+
+auto checkLinePlaneIntersection(Line3D l, Plane p, Vector3D expected) -> bool {
+    auto lpi = linePlaneIntersection(l, p);
+    return expected.x == lpi.x && expected.y == lpi.y && expected.z == lpi.z;
+}
+
+TEST(TestTheBestLib, testLinePlaneIntersection) {
+    ASSERT_TRUE(checkLinePlaneIntersection({{2, -2, 0}, {3, -2, 1}}, {{1, 3, 1}, {0, 0, 0}, {-1, 2, 1}}, {1, -2, -1}));
+}

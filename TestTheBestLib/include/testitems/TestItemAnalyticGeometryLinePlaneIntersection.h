@@ -1,5 +1,6 @@
 #pragma once
 
+#include "MathUtils.h"
 #include "TestItem.h"
 
 using namespace com::prog::knowledgetest;
@@ -16,20 +17,7 @@ class TestItemAnalyticGeometryLinePlaneIntersection : public TestItem {
     [[nodiscard]] auto getMaxNumOfQuestions() const -> uint16_t override;
 
   private:
-    double a1;
-    double a2;
-    double a3;
-    double b1;
-    double b2;
-    double b3;
-    double c1;
-    double c2;
-    double c3;
-    double x1;
-    double x2;
-    double x3;
-    double y1;
-    double y2;
-    double y3;
+    Plane p;
+    Line3D l;
 };
 } // namespace com::prog::testthebest

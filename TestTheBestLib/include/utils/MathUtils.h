@@ -26,6 +26,21 @@ struct Line2D {
     Vector2D b;
 };
 
+struct Line3D {
+    Line3D() = default;
+    Line3D(Vector3D _a, Vector3D _b);
+    Vector3D a;
+    Vector3D b;
+};
+
+struct Plane {
+    Plane() = default;
+    Plane(Vector3D _a, Vector3D _b, Vector3D _c);
+    Vector3D a;
+    Vector3D b;
+    Vector3D c;
+};
+
 template <class T> auto createRandomNumber(T min, T max) -> T {
     std::random_device randomDevice;
     std::default_random_engine randomEngine(randomDevice());
@@ -48,3 +63,4 @@ auto dotProduct3D(Vector3D v1, Vector3D v2) -> double;
 auto crossProduct(Vector3D v1, Vector3D v2) -> Vector3D;
 auto angleBetweenVectors(Vector3D v1, Vector3D v2) -> double;
 auto lineLineIntersection2D(Line2D l1, Line2D l2) -> Vector2D;
+auto linePlaneIntersection(Line3D l, Plane p) -> Vector3D;
