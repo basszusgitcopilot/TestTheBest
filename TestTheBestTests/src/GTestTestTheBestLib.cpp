@@ -40,3 +40,12 @@ auto checkLinePlaneIntersection(Line3D l, Plane p, Vector3D expected) -> bool {
 TEST(TestTheBestLib, testLinePlaneIntersection) {
     ASSERT_TRUE(checkLinePlaneIntersection({{2, -2, 0}, {3, -2, 1}}, {{1, 3, 1}, {0, 0, 0}, {-1, 2, 1}}, {1, -2, -1}));
 }
+
+TEST(TestTheBestLib, testAreVectorsParallel2D) {
+    ASSERT_TRUE(areVectorsParallel2D({1, 2}, {2, 4}));
+    ASSERT_TRUE(areVectorsParallel2D({-1, 2}, {2, -4}));
+    ASSERT_TRUE(areVectorsParallel2D({-1, -2}, {2, 4}));
+    ASSERT_TRUE(areVectorsParallel2D({-1, -2}, {-2, -4}));
+}
+
+TEST(TestTheBestLib, testAreLinesParallel2D) { ASSERT_TRUE(areLinesParallel2D({{0, 0}, {1, 1}}, {{1, 0}, {2, 1}})); }

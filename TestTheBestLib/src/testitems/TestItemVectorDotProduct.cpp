@@ -28,12 +28,11 @@ auto TestItemVectorDotProduct::getQuestion() const -> std::string {
 }
 
 auto TestItemVectorDotProduct::getRightAnswer() const -> std::string {
-    std::string angleString = "Winkel kann man nicht bestimmen";
     if (vectorLength3D(a) > 0 && vectorLength3D(b) > 0) {
         auto angle = angleBetweenVectors(a, b) * 180 / M_PI;
-        angleString = numberToString(angle, 2) + "°";
+        return numberToString(dotProduct3D(a, b)) + "; " + numberToString(angle, 2) + "°";
     }
-    return numberToString(dotProduct3D(a, b)) + "; " + angleString;
+    return "Winkel kann man nicht bestimmen";
 }
 
 auto TestItemVectorDotProduct::checkAnswer(const std::string &answer) -> CheckAnswerResult {

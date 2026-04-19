@@ -64,3 +64,5 @@ auto crossProduct(Vector3D v1, Vector3D v2) -> Vector3D;
 auto angleBetweenVectors(Vector3D v1, Vector3D v2) -> double;
 auto lineLineIntersection2D(Line2D l1, Line2D l2) -> Vector2D;
 auto linePlaneIntersection(Line3D l, Plane p) -> Vector3D;
+auto areVectorsParallel2D(Vector2D v1, Vector2D v2) -> bool;
+auto areLinesParallel2D(Line2D l1, Line2D l2) -> bool;

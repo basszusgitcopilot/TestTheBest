@@ -46,12 +46,21 @@ auto crossProduct(Vector3D v1, Vector3D v2) -> Vector3D {
 
 auto angleBetweenVectors(Vector3D v1, Vector3D v2) -> double { return std::acos(dotProduct3D(v1, v2) / vectorLength3D(v1) / vectorLength3D(v2)); }
 auto lineLineIntersection2D(Line2D l1, Line2D l2) -> Vector2D {
-    auto m = l1.b - l1.a;
-    auto n = l2.b - l2.a;
-    double i = (l2.a.y - l2.a.x * n.y / n.x - l1.a.y + l1.a.x * n.y / n.x) / (m.y - m.x * n.y / n.x);
-    double s1 = l1.a.x + i * m.x;
-    double s2 = l1.a.y + i * m.y;
-    return Vector2D{s1, s2};
+    auto l1ab = l1.b - l1.a;
+    auto l2ab = l2.b - l2.a;
+
+    if (l1ab.x != 0 && l2ab.x != 0) {
+        double i = (l2.a.y - l2.a.x * l2ab.y / l2ab.x - l1.a.y + l1.a.x * l2ab.y / l2ab.x) / (l1ab.y - l1ab.x * l2ab.y / l2ab.x);
+        return {l1.a.x + i * l1ab.x, l1.a.y + i * l1ab.y};
+    }
+
+    if (l2ab.x != 0) {
+        double k = (l1.a.x - l2.a.x) / l2ab.x;
+        return {l1.a.x, l2.a.y + l2ab.y * k};
+    }
+
+    double i = (l2.a.x - l1.a.x) / l1ab.x;
+    return {l2.a.x, l1.a.y + l1ab.y * i};
 }
 
 auto linePlaneIntersection(Line3D l, Plane p) -> Vector3D {
@@ -64,3 +73,7 @@ auto linePlaneIntersection(Line3D l, Plane p) -> Vector3D {
     double t = (n.x * (p.a.x - l.a.x) + n.y * (p.a.y - l.a.y) + n.z * (p.a.z - l.a.z)) / (n.x * lab.x + n.y * lab.y + n.z * lab.z);
     return Vector3D{.x = l.a.x + lab.x * t, .y = l.a.y + lab.y * t, .z = l.a.z + lab.z * t};
 }
+
+auto areVectorsParallel2D(Vector2D v1, Vector2D v2) -> bool { return vectorLength3D(crossProduct({v1.x, v1.y, 0}, {v2.x, v2.y, 0})) == 0; }
+
+auto areLinesParallel2D(Line2D l1, Line2D l2) -> bool { return areVectorsParallel2D(l1.b - l1.a, l2.b - l2.a); }
