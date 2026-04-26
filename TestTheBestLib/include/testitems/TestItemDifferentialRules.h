@@ -25,7 +25,7 @@ class TestItemDifferentialRules : public TestItem {
         {"f(x) = x", "f'(x) = 1"},                                           //
         {"f(x) = ax", "f'(x) = a"},                                          //
         {"f(x) = x+a", "f'(x) = 1"},                                         //
-        {"f(x) = x^n", "f'(x) = n*x^(n-1))"},                                //
+        {"f(x) = x^n", "f'(x) = n*x^(n-1)"},                                //
         {"f(x) = e^x", "f'(x) = e^x"},                                       //
         {"f(x) = a^x", "f'(x) = a^x*ln(a)"},                                 //
         {"f(x) = ln(x)", "f'(x) = 1/x"},                                     //
