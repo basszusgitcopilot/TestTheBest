@@ -8,9 +8,9 @@ TestItemStochasticBernoulliExperiment::TestItemStochasticBernoulliExperiment() {
     constexpr uint32_t nmax = 20;
     constexpr uint32_t kmin = 2;
     constexpr uint32_t kmax = 6;
-    constexpr uint32_t numOfAMin = 1;
+    constexpr uint32_t numOfAMin = 2;
     constexpr uint32_t numOfAMax = 20;
-    constexpr uint32_t numOfBMin = 1;
+    constexpr uint32_t numOfBMin = 2;
     constexpr uint32_t numOfBMax = 20;
     k = createRandomNumber(kmin, kmax);
     n = createRandomNumber(k, nmax);
