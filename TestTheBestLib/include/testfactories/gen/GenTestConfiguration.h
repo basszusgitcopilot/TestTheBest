@@ -21,6 +21,7 @@ struct TestConfiguration {
     uint8_t numOfStereoSphereSurfaceVolume = 0;
     uint8_t numOfStereoSphereVolume = 0;
     uint8_t numOfStochasticBernoulliExperiment = 0;
+    uint8_t numOfStochasticBinomDistFormulas = 0;
     uint8_t numOfStochasticCombination = 0;
     uint8_t numOfTrigonometryRules = 0;
     uint8_t numOfVectorCrossProduct = 0;

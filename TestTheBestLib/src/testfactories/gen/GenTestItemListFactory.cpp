@@ -70,6 +70,10 @@ auto TestItemListFactory::fillConfigurationValue(TestConfiguration &configuratio
         configuration.numOfStochasticBernoulliExperiment = propertyValue;
         return;
     }
+    if (propertyName == "numOfStochasticBinomDistFormulas") {
+        configuration.numOfStochasticBinomDistFormulas = propertyValue;
+        return;
+    }
     if (propertyName == "numOfStochasticCombination") {
         configuration.numOfStochasticCombination = propertyValue;
         return;
