@@ -22,8 +22,8 @@ auto TestItemVectorCrossProduct::equals(const TestItem &other) const -> bool {
 };
 
 auto TestItemVectorCrossProduct::getQuestion() const -> std::string {
-    return "Hektor möchte den Vektorprodukt (Kreuzprodukt) von zwei Vektoren bekommen: (" + std::to_string(a1) + ", " + std::to_string(a2) + ", " +
-           std::to_string(a3) + ")⨯(" + std::to_string(b1) + ", " + std::to_string(b2) + ", " + std::to_string(b3) +
+    return "Hektor möchte den Vektorprodukt (Kreuzprodukt) von zwei Vektoren bekommen: (" + std::to_string(a1) + "; " + std::to_string(a2) + "; " +
+           std::to_string(a3) + ")⨯(" + std::to_string(b1) + "; " + std::to_string(b2) + "; " + std::to_string(b3) +
            "). Welches Ergebnis bekommt er, wenn er richtig rechnet?\n";
 }
 
