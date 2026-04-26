@@ -59,3 +59,5 @@ TEST(TestTheBestLib, testIsCoordinateOnPlane) { ASSERT_TRUE(isCoordinateOnPlane(
 TEST(TestTheBestLib, testBinomDistExpectedValue) { ASSERT_EQ(expectedValueBinomialDistribution(100, 0.4), 40); }
 
 TEST(TestTheBestLib, testBinomDistStandardDeviation) { ASSERT_EQ(standardDeviationBinomialDistribution(100, 0.5), 5); }
+
+TEST(TestTheBestLib, testBernoulliChainProbability) { ASSERT_EQ(numberToString(bernoulliChainProbability(10, 6, 0.4), 4), "0.1115"); }

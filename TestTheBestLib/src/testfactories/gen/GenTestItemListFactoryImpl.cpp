@@ -56,6 +56,9 @@ auto TestItemListFactoryImpl::getNumOfItems(const TestConfiguration &config, Tes
     case TestItemType::STOCHASTIC_BINOM_DIST_FORMULAS: {
         return config.numOfStochasticBinomDistFormulas;
     }
+    case TestItemType::STOCHASTIC_BINOM_DIST_PROBAB_DIST: {
+        return config.numOfStochasticBinomDistProbabDist;
+    }
     case TestItemType::STOCHASTIC_COMBINATION: {
         return config.numOfStochasticCombination;
     }

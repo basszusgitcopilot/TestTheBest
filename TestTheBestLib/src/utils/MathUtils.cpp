@@ -88,5 +88,6 @@ auto isCoordinateOnPlane(Vector3D a, Plane p) -> bool {
     return a == p.a || a == p.b || a == p.c || dotProduct3D(crossProduct(p.b - p.a, p.c - p.a), p.a - a) == 0;
 }
 
-auto expectedValueBinomialDistribution(double n, double p) -> double { return n * p; };
-auto standardDeviationBinomialDistribution(double n, double p) -> double { return std::sqrt(n * p * (1 - p)); };
+auto expectedValueBinomialDistribution(uint64_t n, double p) -> double { return n * p; };
+auto standardDeviationBinomialDistribution(uint64_t n, double p) -> double { return std::sqrt(n * p * (1 - p)); };
+auto bernoulliChainProbability(uint64_t n, uint64_t k, double p) -> double { return bincoeff(n, k) * std::pow(p, k) * std::pow(1 - p, n - k); }

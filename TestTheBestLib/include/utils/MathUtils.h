@@ -71,5 +71,6 @@ auto areLinesParallel2D(Line2D l1, Line2D l2) -> bool;
 auto isCoordinateOnLine2D(Vector2D a, Line2D l) -> bool;
 auto areTheSameLines(Line2D l1, Line2D l2) -> bool;
 auto isCoordinateOnPlane(Vector3D a, Plane p) -> bool;
-auto expectedValueBinomialDistribution(double n, double p) -> double;
-auto standardDeviationBinomialDistribution(double n, double p) -> double;
+auto expectedValueBinomialDistribution(uint64_t n, double p) -> double;
+auto standardDeviationBinomialDistribution(uint64_t n, double p) -> double;
+auto bernoulliChainProbability(uint64_t n, uint64_t k, double p) -> double;

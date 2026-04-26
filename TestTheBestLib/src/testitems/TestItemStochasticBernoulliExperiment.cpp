@@ -38,9 +38,7 @@ auto TestItemStochasticBernoulliExperiment::getQuestion() const -> std::string {
 }
 
 auto TestItemStochasticBernoulliExperiment::getRightAnswer() const -> std::string {
-    std::string rightAnswer = numberToString(
-        bincoeff(n, k) * std::pow((double)numOfA / (double)(numOfA + numOfB), k) * std::pow((double)numOfB / (double)(numOfA + numOfB), n - k), 5);
-    return rightAnswer;
+    return numberToString(bernoulliChainProbability(n, k, (double)numOfA / (double)(numOfA + numOfB)), 5);
 }
 
 auto TestItemStochasticBernoulliExperiment::checkAnswer(const std::string &answer) -> CheckAnswerResult {

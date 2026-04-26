@@ -19,6 +19,7 @@
 #include "TestItemStereoSphereVolume.h"
 #include "TestItemStochasticBernoulliExperiment.h"
 #include "TestItemStochasticBinomDistFormulas.h"
+#include "TestItemStochasticBinomDistProbabDist.h"
 #include "TestItemStochasticCombination.h"
 #include "TestItemTrigonometryRules.h"
 #include "TestItemVectorCrossProduct.h"
@@ -80,6 +81,9 @@ auto TestItemFactoryImpl::createTestItem(const TestItemType TestItemType) -> std
     }
     case TestItemType::STOCHASTIC_BINOM_DIST_FORMULAS: {
         return std::make_shared<MultipleChoiceTestItem<TestItemStochasticBinomDistFormulas>>();
+    }
+    case TestItemType::STOCHASTIC_BINOM_DIST_PROBAB_DIST: {
+        return std::make_shared<MultipleChoiceTestItem<TestItemStochasticBinomDistProbabDist>>();
     }
     case TestItemType::STOCHASTIC_COMBINATION: {
         return std::make_shared<MultipleChoiceTestItem<TestItemStochasticCombination>>();

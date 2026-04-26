@@ -74,6 +74,10 @@ auto TestItemListFactory::fillConfigurationValue(TestConfiguration &configuratio
         configuration.numOfStochasticBinomDistFormulas = propertyValue;
         return;
     }
+    if (propertyName == "numOfStochasticBinomDistProbabDist") {
+        configuration.numOfStochasticBinomDistProbabDist = propertyValue;
+        return;
+    }
     if (propertyName == "numOfStochasticCombination") {
         configuration.numOfStochasticCombination = propertyValue;
         return;
