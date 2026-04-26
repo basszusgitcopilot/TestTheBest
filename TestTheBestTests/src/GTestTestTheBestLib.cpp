@@ -55,3 +55,7 @@ TEST(TestTheBestLib, testIsCoordinateOnLine2D) { ASSERT_TRUE(isCoordinateOnLine2
 TEST(TestTheBestLib, testAreTheSameLines) { ASSERT_TRUE(areTheSameLines({{0, 0}, {1, 1}}, {{-1, -1}, {2, 2}})); }
 
 TEST(TestTheBestLib, testIsCoordinateOnPlane) { ASSERT_TRUE(isCoordinateOnPlane({1, -2, -1}, {{1, 3, 1}, {0, 0, 0}, {-1, 2, 1}})); }
+
+TEST(TestTheBestLib, testBinomDistExpectedValue) { ASSERT_EQ(expectedValueBinomialDistribution(100, 0.4), 40); }
+
+TEST(TestTheBestLib, testBinomDistStandardDeviation) { ASSERT_EQ(standardDeviationBinomialDistribution(100, 0.5), 5); }
