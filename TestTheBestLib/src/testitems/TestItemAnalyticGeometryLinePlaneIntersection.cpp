@@ -35,7 +35,7 @@ auto TestItemAnalyticGeometryLinePlaneIntersection::equals(const TestItem &other
 auto TestItemAnalyticGeometryLinePlaneIntersection::getQuestion() const -> std::string {
     return "Gegeben eine Ebene mit drei Punkten: A(" + numberToString(p.a.x) + ";" + numberToString(p.a.y) + ";" + numberToString(p.a.z) + "), B(" +
            numberToString(p.b.x) + ";" + numberToString(p.b.y) + ";" + numberToString(p.b.z) + "), C(" + numberToString(p.c.x) + ";" + numberToString(p.c.y) +
-           ";" + numberToString(p.c.z) + "), und eine andere Linie mit zwei Punkten: X(" + numberToString(l.a.x) + ";" + numberToString(l.a.y) + ";" +
+           ";" + numberToString(p.c.z) + "), und eine Linie mit zwei Punkten: X(" + numberToString(l.a.x) + ";" + numberToString(l.a.y) + ";" +
            numberToString(l.a.z) + "), Y(" + numberToString(l.b.x) + ";" + numberToString(l.b.y) + ";" + numberToString(l.b.z) + "). Wo schneiden sie sich?\n";
 }
 
