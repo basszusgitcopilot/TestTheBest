@@ -22,7 +22,7 @@ auto TestItemVectorDotProduct::equals(const TestItem &other) const -> bool {
 };
 
 auto TestItemVectorDotProduct::getQuestion() const -> std::string {
-    return "Viktor möchte den Skalarprodukt von zwei Vektoren bekommen: (" + numberToString(a.x) + ", " + numberToString(a.y) + ", " + numberToString(a.z) +
+    return "Viktor möchte das Skalarprodukt von zwei Vektoren bekommen: (" + numberToString(a.x) + ", " + numberToString(a.y) + ", " + numberToString(a.z) +
            ")⋅(" + numberToString(b.x) + ", " + numberToString(b.y) + ", " + numberToString(b.z) +
            "). Welches Ergebnis bekommt er, wenn er richtig rechnet? Wie groß ist der Winkel zwischen den zwei Vektoren?\n";
 }

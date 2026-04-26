@@ -23,7 +23,7 @@ class TestItemIntegralRules : public TestItem {
     int32_t ruleIndex;
 
     const std::vector<std::pair<std::string, std::string>> rules{
-        {"f(x) = x^n", "F(x) = 1/(n+1)*x^(n+1) + c"},                    //
+        {"f(x) = x^n", "F(x) = 1/(n+1)*x^(n+1) + c"},                //
         {"f(x) = g(x) + h(x)", "F(x) = G(x) + H(x)"},                //
         {"f(x) = c*g(x)", "F(x) = c*U(x)"},                          //
         {"f(x) = 1/x, x > 0", "F(x) = ln(x) + c"},                   //
