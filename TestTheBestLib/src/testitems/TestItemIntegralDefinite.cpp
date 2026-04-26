@@ -10,7 +10,7 @@ TestItemIntegralDefinite::TestItemIntegralDefinite() {
     ax2 = createRandomNumber(min, max);
     ax1 = createRandomNumber(min, max);
     ax0 = createRandomNumber(min, max);
-    t0 = createRandomNumber(min, max);
+    t0 = createRandomNumber(0, max);
     t1 = createRandomNumber(t0 + 1, max + 1);
 }
 
