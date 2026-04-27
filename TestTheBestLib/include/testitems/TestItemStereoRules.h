@@ -37,8 +37,8 @@ class TestItemStereoRules : public TestItem {
         {"die Oberfläche eines Zylinders", "2⋅r⋅π⋅(h + r)"},                  //
         {"das Volumen eines geraden Kreiskegels", "1/3⋅r²⋅π⋅h"},              //
         {"die Oberfläche eines geraden Kreiskegels", "r⋅π⋅(r + √(h² + r²))"}, //
-        {"das Volumen eines Kugels", "4/3⋅r³⋅π"},                             //
-        {"die Oberfläche eines Kugels", "4⋅r²⋅π"},                            //
+        {"das Volumen einer Kugel", "4/3⋅r³⋅π"},                             //
+        {"die Oberfläche einer Kugel", "4⋅r²⋅π"},                            //
     };
 };
 } // namespace com::prog::testthebest
