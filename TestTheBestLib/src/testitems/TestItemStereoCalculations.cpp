@@ -17,7 +17,7 @@ auto TestItemStereoCalculations::equals(const TestItem &other) const -> bool {
 };
 
 auto TestItemStereoCalculations::getQuestion() const -> std::string {
-    return "Albus Dumbledore hat einen Kugel, einen Tetraeder und einen Würfel. Die Oberfläche jedes einzelnen beträgt " + numberToString(surfaceArea, 0) +
+    return "Albus Dumbledore hat eine Kugel, einen Tetraeder und einen Würfel. Die Oberfläche jedes einzelnen beträgt " + numberToString(surfaceArea, 0) +
            " cm². Berechne das Gesamtvolumen der drei Körper!";
 }
 
